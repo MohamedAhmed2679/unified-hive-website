@@ -200,7 +200,7 @@ const Navigation = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-[#050A14]/98 backdrop-blur-2xl z-40 lg:hidden pt-24 px-6 overflow-y-auto"
+            className="fixed inset-0 bg-white/98 dark:bg-[#050A14]/98 backdrop-blur-2xl z-40 lg:hidden pt-24 px-6 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -216,13 +216,13 @@ const Navigation = () => {
                 <div key={link.name}>
                   {link.children ? (
                     <div className="flex flex-col space-y-1 mb-2">
-                      <span className="text-xs font-semibold text-white/30 uppercase tracking-[0.15em] px-3 py-2 font-heading">{link.name}</span>
-                      <div className="pl-3 border-l border-[#FFD700]/20 flex flex-col">
+                      <span className="text-xs font-semibold text-[#001F3F]/50 dark:text-white/40 uppercase tracking-[0.15em] px-3 py-2 font-heading">{link.name}</span>
+                      <div className="pl-3 border-l border-[#001F3F]/10 dark:border-[#FFD700]/20 flex flex-col">
                         {link.children.map((child) => (
                           <Link
                             key={child.name}
                             to={child.path}
-                            className="text-base text-white/70 hover:text-[#FFD700] font-medium py-2.5 px-3 tap-target transition-colors"
+                            className="text-base text-[#001F3F]/80 dark:text-white/70 hover:text-[#06B6D4] dark:hover:text-[#FFD700] font-medium py-2.5 px-3 tap-target transition-colors"
                             onClick={() => { setIsOpen(false); }}
                           >
                             {child.name}
@@ -234,7 +234,7 @@ const Navigation = () => {
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}>
                       <Link
                         to={link.path}
-                        className="text-2xl font-bold text-white/90 hover:text-[#FFD700] font-heading block py-3 px-3 tap-target transition-colors"
+                        className="text-2xl font-bold text-[#001F3F] dark:text-white/90 hover:text-[#06B6D4] dark:hover:text-[#FFD700] font-heading block py-3 px-3 tap-target transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         {link.name}
@@ -243,9 +243,9 @@ const Navigation = () => {
                   )}
                 </div>
               ))}
-              <div className="h-px bg-white/[0.06] my-4" />
+              <div className="h-px bg-[#001F3F]/10 dark:bg-white/[0.06] my-4" />
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="ghost" className="w-full text-white/70 hover:text-white justify-start text-lg px-3 font-medium">Contact</Button>
+                <Button variant="ghost" className="w-full text-[#001F3F]/80 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 justify-start text-lg px-3 font-medium">Contact</Button>
               </Link>
               <Link to="/book-demo" onClick={() => setIsOpen(false)}>
                 <Button className="w-full btn-premium text-lg py-6 justify-center">Book Demo</Button>

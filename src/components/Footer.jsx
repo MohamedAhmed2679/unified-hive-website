@@ -36,13 +36,12 @@ const MicrosoftIcon = () => (
 const socialLinks = [
   { name: "LinkedIn", icon: LinkedInIcon, url: "https://www.linkedin.com/company/unifiedhive" },
   { name: "X", icon: XIcon, url: "https://x.com/UnifiedHive" },
-  { name: "Facebook", icon: FacebookIcon, url: "https://www.facebook.com/profile.php?id=61585584036031" },
-  { name: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/unifiedhive" },
-  { name: "TikTok", icon: TikTokIcon, url: "https://www.tiktok.com/@unifiedhive" },
+  { name: "Facebook", icon: FacebookIcon, url: "https://www.facebook.com/profile.php?id=61585777135146" },
+  { name: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/unifiedhive?igsh=MTJpYzBnYzdib2J3Yg%3D%3D&utm_source=qr" },
+  { name: "TikTok", icon: TikTokIcon, url: "https://www.tiktok.com/@unifiedhive?_r=1&_t=ZS-92WVvdL70nw" },
   { name: "YouTube", icon: YouTubeIcon, url: "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA" },
   { name: "GitHub", icon: GitHubIcon, url: "https://github.com/Unifiedhive" },
-  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/u/unifiedhive" },
-  { name: "Microsoft", icon: MicrosoftIcon, url: "https://techcommunity.microsoft.com/users/mohamed_nagah/2975568" },
+  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/u/unifiedhive/s/maZUsP5lmO" },
 ];
 
 const Footer = () => {
@@ -50,27 +49,19 @@ const Footer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleNewsletterSubmit = async (e) => {
+  const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     if (!email) return;
     setIsSubmitting(true);
-    try {
-      const { supabase } = await import('@/lib/customSupabaseClient');
-      const { error: dbError } = await supabase.from('newsletter_subscribers').insert([{ email }]);
-      if (dbError) {
-        if (dbError.code === '23505') {
-          toast({ title: "Already Subscribed", description: "This email is already on our list!" });
-          setIsSubmitting(false);
-          return;
-        } else throw dbError;
-      }
-      toast({ title: "Subscribed Successfully!", description: "You'll receive our latest insights and updates." });
-      setEmail('');
-    } catch {
-      toast({ variant: "destructive", title: "Subscription Failed", description: "Please try again later." });
-    } finally {
-      setIsSubmitting(false);
-    }
+    setTimeout(() => {
+        const subject = encodeURIComponent("Subscribe to Unified Hive Newsletter");
+        const body = encodeURIComponent(`Hello,\n\nI would like to subscribe to the Unified Hive newsletter. Please add my email address (${email}) to your mailing list.\n\nThank you!`);
+        window.location.href = `mailto:info@unifiedhive.com?subject=${subject}&body=${body}`;
+        
+        toast({ title: "Ready to Send", description: "Your email client has been opened. Please send the message to subscribe." });
+        setEmail('');
+        setIsSubmitting(false);
+    }, 500);
   };
 
   return (
@@ -133,15 +124,15 @@ const Footer = () => {
             <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#FFD700] mb-5 block">Contact</span>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="tel:+19177814487" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
+                <a href="tel:+201151152279" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
                   <Phone size={16} className="mt-0.5 text-[#06B6D4] flex-shrink-0" />
-                  <span className="text-gray-400">+1 917 781 4487</span>
+                  <span className="text-gray-400">+20 115 115 2279</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@unifiedhive.com" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
+                <a href="mailto:Info@unifiedhive.com" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
                   <Mail size={16} className="mt-0.5 text-[#06B6D4] flex-shrink-0" />
-                  <span className="text-gray-400 break-all">info@unifiedhive.com</span>
+                  <span className="text-gray-400 break-all">Info@unifiedhive.com</span>
                 </a>
               </li>
               <li className="flex items-start gap-3">

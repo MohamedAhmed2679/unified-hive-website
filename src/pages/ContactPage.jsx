@@ -48,7 +48,7 @@ const ContactPage = () => {
         try {
             const subject = encodeURIComponent(`Website Contact – ${formData.name}`);
             const body = encodeURIComponent(
-                `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company || 'N/A'}\n\nMessage:\n${formData.message}`
+                `Hello Unified Hive Team,\n\nI am looking to get in contact with you soon. Here is my information:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nCompany: ${formData.company || 'N/A'}\n\nMessage:\n${formData.message}`
             );
 
             // Send directly to the user's default email client
@@ -77,27 +77,19 @@ const ContactPage = () => {
         }
     };
 
-    const handleNewsletterSubmit = async (e) => {
+    const handleNewsletterSubmit = (e) => {
         e.preventDefault();
         if (!newsletterEmail) return;
         setIsNewsletterSubmitting(true);
-        try {
-            const { supabase } = await import('@/lib/customSupabaseClient');
-            const { error: dbError } = await supabase.from('newsletter_subscribers').insert([{ email: newsletterEmail }]);
-            if (dbError) {
-                if (dbError.code === '23505') {
-                    toast({ title: "Already Subscribed", description: "This email is already on our list!" });
-                    setIsNewsletterSubmitting(false);
-                    return;
-                } else throw dbError;
-            }
-            toast({ title: "Subscribed Successfully!", description: "You'll receive our latest insights and updates." });
+        setTimeout(() => {
+            const subject = encodeURIComponent("Subscribe to Unified Hive Newsletter");
+            const body = encodeURIComponent(`Hello,\n\nI would like to subscribe to the Unified Hive newsletter. Please add my email address (${newsletterEmail}) to your mailing list.\n\nThank you!`);
+            window.location.href = `mailto:info@unifiedhive.com?subject=${subject}&body=${body}`;
+            
+            toast({ title: "Ready to Send", description: "Your email client has been opened. Please send the message to subscribe." });
             setNewsletterEmail('');
-        } catch {
-            toast({ variant: "destructive", title: "Subscription Failed", description: "Please try again later." });
-        } finally {
             setIsNewsletterSubmitting(false);
-        }
+        }, 500);
     };
 
     const handleInputChange = (e) => {

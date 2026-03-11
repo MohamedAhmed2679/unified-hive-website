@@ -32,9 +32,12 @@
     <meta name="twitter:description" content="Secure your future with intelligent IT. We reduce operational costs by 40% and eliminate downtime risks with Zero Trust security and DevOps automation." />
     <meta name="twitter:image" content="https://horizons-cdn.hostinger.com/3d5f6b13-c880-47b3-8cfb-48f3d18da893/65a7b1a51649e52a56ad0d3c553b286e.png" />
 
-    <!-- Font Preconnect -->
+    <!-- Font Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
 
     <!-- Tawk.to Script -->
     <script type="text/javascript">
@@ -42,10 +45,15 @@
       (function(){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
       s1.async=true;
+      s1.defer=true;
       s1.src='https://embed.tawk.to/69220cc3b6e2ce195ce6c6b1/1jamg3ni9';
       s1.charset='UTF-8';
       s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+      if (s0 && s0.parentNode) {
+        s0.parentNode.insertBefore(s1,s0);
+      } else {
+        document.head.appendChild(s1);
+      }
       })();
     </script>
 

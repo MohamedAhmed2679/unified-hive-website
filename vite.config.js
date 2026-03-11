@@ -297,6 +297,14 @@ export default defineConfig({
 	},
 	build: {
 		rollupOptions: {
+			output: {
+				manualChunks: {
+					'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+					'vendor-framer': ['framer-motion'],
+					'vendor-lucide': ['lucide-react'],
+					'vendor-ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot', '@radix-ui/react-toast', 'class-variance-authority', 'clsx', 'tailwind-merge']
+				}
+			},
 			external: [
 				'@babel/parser',
 				'@babel/traverse',

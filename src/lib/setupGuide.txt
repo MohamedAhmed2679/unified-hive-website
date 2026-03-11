@@ -1,0 +1,8 @@
+IMPORTANT: To enable the Intelligent AI Chatbot
+
+1. You must set your OpenAI API Key as a secret in your Supabase project.
+2. Go to your Supabase Dashboard -> Project Settings -> Edge Functions -> Secrets.
+3. Add a new secret named: OPENAI_API_KEY
+4. Value: sk-.... (your actual OpenAI key)
+
+Without this key, the chat widget will show an error message.

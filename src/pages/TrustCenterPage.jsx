@@ -14,7 +14,7 @@ const TrustCenterPage = () => {
  <div className="pt-24 pb-16 bg-white dark:bg-[#0A1228]">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="mb-12">
- <h1 className="text-4xl font-bold text-[#4A142C] mb-4 font-heading">Trust Center</h1>
+ <h1 className="text-4xl font-bold text-[#001F3F] dark:text-white mb-4 font-heading">Trust Center</h1>
  <p className="text-xl text-muted-foreground">Security is not a feature; it's our foundation.</p>
  </AnimatedContent>
 
@@ -23,7 +23,7 @@ const TrustCenterPage = () => {
  <section>
  <div className="flex items-center gap-3 mb-4">
  <Shield className="text-[#FFC107] w-8 h-8"/>
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading">Security Measures</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">Security Measures</h2>
  </div>
  <p className="text-muted-foreground mb-4">We employ defense-in-depth strategies including:</p>
  <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
@@ -37,7 +37,7 @@ const TrustCenterPage = () => {
  <section>
  <div className="flex items-center gap-3 mb-4">
  <FileCheck className="text-[#FFC107] w-8 h-8"/>
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading">Compliance</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">Compliance</h2>
  </div>
  <p className="text-muted-foreground">Our processes align with major industry standards:</p>
  <div className="flex gap-4 mt-4">
@@ -52,7 +52,7 @@ const TrustCenterPage = () => {
  <section>
  <div className="flex items-center gap-3 mb-4">
  <Server className="text-[#FFC107] w-8 h-8"/>
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading">Availability</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">Availability</h2>
  </div>
  <p className="text-muted-foreground mb-4">Real-time system status and uptime metrics.</p>
  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 dark:border-white/[0.06]">
@@ -71,10 +71,10 @@ const TrustCenterPage = () => {
  <section>
  <div className="flex items-center gap-3 mb-4">
  <Lock className="text-[#FFC107] w-8 h-8"/>
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading">Data Privacy</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">Data Privacy</h2>
  </div>
  <p className="text-muted-foreground">
- We respect your data rights. Read our <a href="/privacy"className="text-[#4A142C] underline">Privacy Policy</a> to understand how we handle your information.
+ We respect your data rights. Read our <a href="/privacy"className="text-[#06B6D4] hover:text-[#001F3F] dark:hover:text-[#FFD700] underline">Privacy Policy</a> to understand how we handle your information.
  </p>
  </section>
  </div>

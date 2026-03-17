@@ -23,7 +23,7 @@ const DashboardPage = () => {
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="fade">
  <div className="glass-card shadow-lg dark:shadow-black/20 p-8 border border-gray-100">
- <h1 className="text-3xl font-bold text-[#4A142C] mb-6 font-heading">
+ <h1 className="text-3xl font-bold text-[#001F3F] dark:text-white mb-6 font-heading">
  Welcome to Your Dashboard
  </h1>
  <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
@@ -31,13 +31,13 @@ const DashboardPage = () => {
  </p>
  
  <div className="p-6 bg-blue-50 rounded-lg border border-blue-100 mb-8">
- <h2 className="text-xl font-semibold text-[#4A142C] mb-2">Account Status</h2>
+ <h2 className="text-xl font-semibold text-[#001F3F] dark:text-white mb-2">Account Status</h2>
  <p className="text-gray-700 dark:text-gray-300">Your account is active and verified.</p>
  </div>
 
  <Button 
  onClick={handleSignOut}
- className="bg-[#4A142C] text-white hover:bg-[#5A1A3C]"
+ className="bg-[#001F3F] text-white hover:bg-[#003366]"
  >
  Sign Out
  </Button>

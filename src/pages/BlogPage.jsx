@@ -142,7 +142,7 @@ const BlogPage = () => {
 
  <div className="pt-20"id="main-content">
  {/* Hero Section */}
- <section className="bg-gradient-to-br from-[#4A142C] via-[#5A1A3C] to-[#4A142C] text-white py-16"aria-label="Blog Header">
+ <section className="bg-gradient-to-br from-[#001F3F] via-[#003366] to-[#001F3F] text-white py-16"aria-label="Blog Header">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="text-center">
  <h1 className="text-4xl md:text-5xl font-bold mb-6 font-heading">
@@ -199,7 +199,7 @@ const BlogPage = () => {
  {/* Main Content - Blog Posts */}
  <div className="lg:col-span-2">
  <div className="flex items-center justify-between mb-8">
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading">Latest Articles</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">Latest Articles</h2>
  </div>
 
  <div className="space-y-12">
@@ -220,7 +220,7 @@ const BlogPage = () => {
  <Tag size={14} aria-hidden="true"/>
  {post.category}
  </div>
- <h3 className="text-xl font-bold text-[#4A142C] mb-3 font-heading hover:text-[#FFC107] transition-colors cursor-pointer">
+ <h3 className="text-xl font-bold text-[#001F3F] dark:text-white mb-3 font-heading hover:text-[#FFC107] transition-colors cursor-pointer">
  {post.title}
  </h3>
  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
@@ -239,7 +239,7 @@ const BlogPage = () => {
  {post.date}
  </div>
  </div>
- <Button variant="link"className="text-[#4A142C] hover:text-[#FFC107] p-0 h-auto font-semibold focus-visible:ring-2 focus-visible:ring-[#FFC107] rounded">
+ <Button variant="link"className="text-[#001F3F] dark:text-white hover:text-[#FFC107] p-0 h-auto font-semibold focus-visible:ring-2 focus-visible:ring-[#FFC107] rounded">
  Read More <ArrowRight size={16} className="ml-1"aria-hidden="true"/>
  </Button>
  </div>
@@ -261,7 +261,7 @@ const BlogPage = () => {
  {/* Video Section */}
  <AnimatedContent type="fade"delay={0.2}>
  <div>
- <h2 className="text-2xl font-bold text-[#4A142C] font-heading mb-6">Video Tutorials</h2>
+ <h2 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading mb-6">Video Tutorials</h2>
  <div className="space-y-6">
  {videos.map(video => (
  <div key={video.id} className="group cursor-pointer"tabIndex="0"role="button"aria-label={`Watch video: ${video.title}`}>
@@ -273,20 +273,20 @@ const BlogPage = () => {
  />
  <div className="absolute inset-0 flex items-center justify-center">
  <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full group-hover:bg-[#FFC107] transition-colors duration-300">
- <PlayCircle size={32} className="text-white group-hover:text-[#4A142C]"aria-hidden="true"/>
+ <PlayCircle size={32} className="text-white group-hover:text-[#001F3F]"aria-hidden="true"/>
  </div>
  </div>
  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
  {video.duration}
  </div>
  </div>
- <h3 className="font-semibold text-[#4A142C] group-hover:text-[#FFC107] transition-colors font-heading leading-tight">
+ <h3 className="font-semibold text-[#001F3F] dark:text-white group-hover:text-[#FFC107] transition-colors font-heading leading-tight">
  {video.title}
  </h3>
  </div>
  ))}
  </div>
- <Button variant="outline"className="w-full mt-6 border-[#4A142C] text-[#4A142C] hover:bg-[#4A142C] hover:text-white focus-visible:ring-2 focus-visible:ring-[#4A142C]">
+ <Button variant="outline"className="w-full mt-6 border-[#001F3F] text-[#001F3F] hover:bg-[#001F3F] dark:border-white/20 dark:text-white dark:hover:bg-white/10 dark:hover:text-white hover:text-white focus-visible:ring-2 focus-visible:ring-[#001F3F]">
  View All Videos
  </Button>
  </div>
@@ -294,7 +294,7 @@ const BlogPage = () => {
 
  {/* Newsletter Widget */}
  <AnimatedContent type="fade"delay={0.4}>
- <div className="bg-[#4A142C] text-white rounded-xl p-6">
+ <div className="bg-[#001F3F] dark:bg-white/[0.06] text-white rounded-xl p-6">
  <h3 className="text-xl font-bold mb-2 font-heading">Stay Updated</h3>
  <p className="text-sm text-gray-300 mb-4">
  Get the latest tech insights delivered to your inbox.
@@ -312,7 +312,7 @@ const BlogPage = () => {
  className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#FFC107] text-sm"
  required
  />
- <Button className="w-full bg-[#FFC107] hover:bg-[#FFB300] text-[#4A142C] font-bold focus-visible:ring-2 focus-visible:ring-white">
+ <Button className="w-full bg-[#FFC107] hover:bg-[#FFB300] text-[#001F3F] font-bold focus-visible:ring-2 focus-visible:ring-white">
  Subscribe
  </Button>
  </form>

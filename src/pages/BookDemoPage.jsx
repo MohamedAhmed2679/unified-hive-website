@@ -54,7 +54,7 @@ const BookDemoPage = () => {
  </p>
  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
  {["Cloud Architecture","Zero Trust","DevSecOps"].map(tag => (
- <span key={tag} className="bg-gray-100 text-gray-700 dark:text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">
+ <span key={tag} className="bg-gray-100 dark:bg-white/10 text-[#001F3F] dark:text-white text-xs font-semibold px-3 py-1 rounded-full border border-transparent dark:border-white/20">
  {tag}
  </span>
  ))}

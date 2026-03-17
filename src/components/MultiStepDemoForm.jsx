@@ -95,7 +95,7 @@ const MultiStepDemoForm = () => {
  <span className={`h-2 flex-1 rounded-full mr-2 ${step >= 1 ? 'bg-[#FFC107]' : 'bg-gray-200'}`}></span>
  <span className={`h-2 flex-1 rounded-full ${step >= 2 ? 'bg-[#FFC107]' : 'bg-gray-200'}`}></span>
  </div>
- <h3 className="text-2xl font-bold text-[#4A142C] font-heading">
+ <h3 className="text-2xl font-bold text-[#001F3F] dark:text-white font-heading">
  {step === 1 && "Let's get started"}
  {step === 2 && "Tell us your challenges"}
  {step === 3 && "You're all set!"}
@@ -150,7 +150,7 @@ const MultiStepDemoForm = () => {
  placeholder="Acme Inc."
  />
  </div>
- <Button type="submit" className="w-full bg-[#4A142C] hover:bg-[#5A1A3C] text-white py-6 text-lg mt-4">
+ <Button type="submit" className="w-full bg-[#001F3F] hover:bg-[#003366] text-white dark:bg-[#FFD700] dark:text-[#001F3F] dark:hover:bg-[#FFC107] py-6 text-lg mt-4">
  Next Step <ChevronRight className="ml-2" size={20} />
  </Button>
  </motion.form>
@@ -174,12 +174,12 @@ const MultiStepDemoForm = () => {
  onClick={() => togglePainPoint(pain)}
  className={`p-3 rounded-lg border cursor-pointer flex items-center transition-all ${
  formData.painPoints.includes(pain) 
- ? 'bg-[#FFC107]/20 border-[#FFC107] text-[#4A142C]' 
+ ? 'bg-[#FFC107]/20 border-[#FFC107] text-[#001F3F] dark:text-[#FFD700]' 
  : 'border-gray-200 dark:border-white/[0.06] hover:border-gray-300 dark:border-white/[0.08]'
  }`}
  >
  <div className={`w-5 h-5 rounded-full border mr-3 flex items-center justify-center ${
- formData.painPoints.includes(pain) ? 'bg-[#4A142C] border-[#4A142C]' : 'border-gray-400'
+ formData.painPoints.includes(pain) ? 'bg-[#001F3F] border-[#001F3F] dark:bg-[#FFD700] dark:border-[#FFD700]' : 'border-gray-400'
  }`}>
  {formData.painPoints.includes(pain) && <CheckCircle size={12} className="text-white" />}
  </div>
@@ -200,7 +200,7 @@ const MultiStepDemoForm = () => {
  </Button>
  <Button 
  type="submit" 
- className="flex-1 bg-[#FFC107] hover:bg-[#FFB300] text-[#4A142C] font-semibold py-6"
+ className="flex-1 bg-[#FFC107] hover:bg-[#FFB300] text-[#001F3F] font-semibold py-6"
  disabled={isSubmitting}
  >
  {isSubmitting ? <Loader2 className="animate-spin" /> : "Book Demo"}
@@ -219,7 +219,7 @@ const MultiStepDemoForm = () => {
  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
  <CheckCircle size={40} className="text-green-600" />
  </div>
- <h4 className="text-2xl font-bold text-[#4A142C] mb-2 font-heading">Request Received!</h4>
+ <h4 className="text-2xl font-bold text-[#001F3F] dark:text-white mb-2 font-heading">Request Received!</h4>
  <p className="text-gray-600 dark:text-gray-400 mb-6 ">
  Thanks {formData.name}. We've sent a confirmation email to {formData.email}. Our team will review your requirements and reach out within 24 hours.
  </p>

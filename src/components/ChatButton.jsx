@@ -11,7 +11,7 @@ const ChatButton = () => {
  className="fixed bottom-24 right-4 md:right-auto md:bottom-4 md:left-4 z-50"
  >
  <Button 
- className="bg-[#FFC107] hover:bg-[#FFB300] text-[#4A142C] font-bold shadow-lg hover:shadow-xl dark:shadow-black/30 transition-all duration-300 hover:-translate-y-1 rounded-full px-6 py-6 h-auto text-lg gap-2"
+ className="bg-[#FFC107] hover:bg-[#FFB300] text-[#001F3F] font-bold shadow-lg hover:shadow-xl dark:shadow-black/30 transition-all duration-300 hover:-translate-y-1 rounded-full px-6 py-6 h-auto text-lg gap-2"
  >
  <MessageCircle size={24} />
  Chat with Us

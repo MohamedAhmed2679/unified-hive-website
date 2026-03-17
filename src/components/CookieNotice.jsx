@@ -37,11 +37,11 @@ const CookieNotice = () => {
  >
  <div className="max-w-7xl mx-auto bg-white dark:bg-[#0A1228] rounded-lg shadow-2xl border border-gray-200 dark:border-white/[0.06] p-6 md:p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
  <div className="flex-1">
- <h3 className="text-lg font-semibold text-[#4A142C] mb-1 font-heading">We value your privacy</h3>
+ <h3 className="text-lg font-semibold text-[#001F3F] dark:text-white mb-1 font-heading">We value your privacy</h3>
  <p className="text-sm text-muted-foreground">
  We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
  By clicking "Accept", you consent to our use of cookies. 
- <Link to="/cookies" className="text-[#4A142C] hover:text-[#FFC107] underline ml-1">
+ <Link to="/cookies" className="text-[#001F3F] dark:text-white hover:text-[#FFC107] underline ml-1">
  Read our Cookie Policy
  </Link>.
  </p>
@@ -56,7 +56,7 @@ const CookieNotice = () => {
  </Button>
  <Button 
  onClick={handleAccept}
- className="flex-1 md:flex-none bg-[#4A142C] hover:bg-[#5A1A3C] text-white "
+ className="flex-1 md:flex-none bg-[#001F3F] hover:bg-[#003366] text-white dark:bg-[#FFD700] dark:text-[#001F3F] "
  >
  Accept
  </Button>

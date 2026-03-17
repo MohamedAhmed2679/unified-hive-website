@@ -53,7 +53,7 @@ const LoginPage = () => {
  className="w-16 h-16"
  src="https://images.unsplash.com/photo-1690766637215-76d8ae09e158"/>
  </Link>
- <h2 className="mt-2 text-3xl font-extrabold text-[#4A142C] font-heading">
+ <h2 className="mt-2 text-3xl font-extrabold text-[#001F3F] dark:text-white font-heading">
  Welcome Back
  </h2>
  <p className="mt-2 text-sm text-muted-foreground">
@@ -109,7 +109,7 @@ const LoginPage = () => {
 
  <div className="flex items-center justify-between">
  <div className="text-sm">
- <a href="#"className="font-medium text-[#4A142C] hover:text-[#FFC107] transition-colors">
+ <a href="#"className="font-medium text-[#001F3F] dark:text-white hover:text-[#FFC107] transition-colors">
  Forgot your password?
  </a>
  </div>
@@ -118,18 +118,18 @@ const LoginPage = () => {
  <div>
  <Button
  type="submit"
- className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-[#4A142C] bg-[#FFC107] hover:bg-[#FFB300] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFC107] transition-all duration-200"
+ className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-[#001F3F] bg-[#FFC107] hover:bg-[#FFB300] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFC107] transition-all duration-200"
  disabled={isSubmitting}
  >
  {isSubmitting ? 'Signing in...' : 'Sign in'}
- <ArrowRight className="ml-2 -mr-1 h-5 w-5 text-[#4A142C]"aria-hidden="true"/>
+ <ArrowRight className="ml-2 -mr-1 h-5 w-5 text-[#001F3F]"aria-hidden="true"/>
  </Button>
  </div>
 
  <div className="text-center mt-4">
  <p className="text-sm text-muted-foreground">
  Don't have an account?{' '}
- <Link to="/signup"className="font-medium text-[#4A142C] hover:text-[#FFC107] transition-colors">
+ <Link to="/signup"className="font-medium text-[#001F3F] dark:text-white hover:text-[#FFC107] transition-colors">
  Sign up
  </Link>
  </p>

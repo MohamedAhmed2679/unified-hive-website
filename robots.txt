@@ -1,0 +1,14 @@
+# Unifiedhive - robots.txt
+# https://www.unifiedhive.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block admin/internal paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /portal/
+Disallow: /dashboard
+
+# Sitemap location
+Sitemap: https://www.unifiedhive.com/sitemap.xml

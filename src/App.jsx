@@ -12,6 +12,7 @@ import { AuthProvider } from '@/contexts/SupabaseAuthContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import MeshBackground from '@/components/MeshBackground';
 import AnimatedRoutes from '@/AnimatedRoutes';
+import CanonicalURL from '@/components/CanonicalURL';
 import { usePageTracking } from '@/lib/analytics';
 
 const AnalyticsWrapper = ({ children }) => {
@@ -29,6 +30,7 @@ function App() {
           </Helmet>
 
           <AnalyticsWrapper>
+            <CanonicalURL />
             <MeshBackground />
 
             <div className="min-h-screen flex flex-col w-full overflow-x-hidden relative" style={{ zIndex: 1 }}>

@@ -12,10 +12,10 @@ import Testimonials from '@/components/Testimonials';
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ value, suffix = '', prefix = '' }) => {
-  const [count, setCount] = useState(0);
+  const numericValue = parseInt(value.replace(/[^0-9]/g, ''));
+  const [count, setCount] = useState(numericValue);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
-  const numericValue = parseInt(value.replace(/[^0-9]/g, ''));
 
   useEffect(() => {
     if (!inView || isNaN(numericValue)) return;
@@ -31,7 +31,7 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '' }) => {
     requestAnimationFrame(step);
   }, [inView, numericValue]);
 
-  return <span ref={ref}>{prefix}{inView ? count : 0}{suffix}</span>;
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
 };
 
 /* ── Pricing Card ── */
@@ -169,7 +169,7 @@ const HomePage = () => {
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed mb-10">
-            We reduce operational costs by <span className="font-semibold text-foreground">40%</span> and eliminate downtime risks with Zero Trust security and DevOps automation.
+            We reduce operational costs by <span className="font-semibold text-foreground">up to 40%</span> and eliminate downtime risks with Zero Trust security and DevOps automation. <Link to="/outcomes" className="text-[#06B6D4] hover:underline text-base">See case studies →</Link>
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mb-12">
@@ -188,7 +188,7 @@ const HomePage = () => {
           <motion.div variants={itemVariants} className="flex gap-5 sm:gap-8 justify-center items-center flex-wrap">
             {[
               { icon: Linkedin, url: "https://www.linkedin.com/company/unifiedhive", label: "LinkedIn" },
-              { icon: Twitter, url: "https://x.com/UnifiedHive", label: "Twitter" },
+              { icon: Twitter, url: "https://x.com/UnifiedHive", label: "X (formerly Twitter)" },
               { icon: Youtube, url: "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA", label: "YouTube" },
               { icon: Facebook, url: "https://www.facebook.com/profile.php?id=61585777135146", label: "Facebook" },
               { icon: Instagram, url: "https://www.instagram.com/unifiedhive", label: "Instagram" },

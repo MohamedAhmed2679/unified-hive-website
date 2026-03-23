@@ -7,6 +7,8 @@ import { Shield, Zap, TrendingUp, ArrowRight, ChevronDown, Facebook, Instagram, 
 import AnimatedContent from '@/components/AnimatedContent';
 import { UHAnalytics } from '@/lib/analytics';
 import { Switch } from "@/components/ui/switch";
+import TrustSignals from '@/components/TrustSignals';
+import Testimonials from '@/components/Testimonials';
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ value, suffix = '', prefix = '' }) => {
@@ -232,6 +234,9 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* ──── Trust Signals ──── */}
+      <TrustSignals />
+
       {/* ──── Value Props ──── */}
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0 bg-[#0A1228]/50 dark:bg-[#0A1228]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
@@ -269,6 +274,9 @@ const HomePage = () => {
           <div className="mt-16 md:mt-24" />
         </div>
       </section>
+
+      {/* ──── Testimonials ──── */}
+      <Testimonials />
 
       {/* ──── Pricing ──── */}
       <section className="relative py-20 md:py-28 overflow-hidden" id="pricing">

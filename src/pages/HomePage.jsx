@@ -82,6 +82,7 @@ const PricingCard = ({ plan, billingCycle, featured }) => (
 
 const HomePage = () => {
   const [billingCycle, setBillingCycle] = useState('monthly');
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const stats = [
     { value: '40', suffix: '%', label: 'Cost Reduction' },
@@ -175,16 +176,16 @@ const HomePage = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mb-12">
-            <Link to="/book-demo" className="w-full sm:w-auto">
-              <Button className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('book_demo', 'hero_cta')}>
-                Book Demo <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link to="/solutions" className="w-full sm:w-auto">
-              <Button variant="outline" className="bg-transparent border border-[#001F3F]/[0.15] dark:border-white/[0.1] text-foreground hover:bg-[#001F3F]/[0.04] dark:hover:bg-white/[0.04] text-base px-8 py-6 rounded-full w-full sm:w-auto transition-all duration-300" onClick={() => UHAnalytics.trackClick('explore_solutions', 'hero_cta')}>
+            <Button asChild className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('book_demo', 'hero_cta')}>
+              <Link to="/book-demo" className="w-full sm:w-auto flex items-center justify-center">
+                Book Demo <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="bg-transparent border border-[#001F3F]/[0.15] dark:border-white/[0.1] text-foreground hover:bg-[#001F3F]/[0.04] dark:hover:bg-white/[0.04] text-base px-8 py-6 rounded-full w-full sm:w-auto transition-all duration-300" onClick={() => UHAnalytics.trackClick('explore_solutions', 'hero_cta')}>
+              <Link to="/solutions" className="w-full sm:w-auto flex items-center justify-center">
                 Explore Solutions
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex gap-5 sm:gap-8 justify-center items-center flex-wrap">
@@ -326,15 +327,29 @@ const HomePage = () => {
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
-                <details className="glass-card overflow-hidden group relative z-20" style={{ pointerEvents: 'auto' }}>
-                  <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none text-left p-6 select-none tap-target">
+                <div 
+                  className="glass-card overflow-hidden group cursor-pointer" 
+                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpenFaqIndex(openFaqIndex === i ? null : i) }}
+                >
+                  <div className="font-bold text-foreground flex justify-between items-center font-heading list-none text-left p-6 select-none tap-target">
                     <span className="pr-4">{faq.q}</span>
-                    <ChevronDown className="group-open:rotate-180 transition-transform duration-300 text-muted-foreground flex-shrink-0" size={18} />
-                  </summary>
-                  <div className="px-6 pb-6 -mt-2">
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
+                    <ChevronDown className={`transition-transform duration-300 text-muted-foreground flex-shrink-0 ${openFaqIndex === i ? 'rotate-180' : ''}`} size={18} />
                   </div>
-                </details>
+                  
+                  <motion.div 
+                    initial={false}
+                    animate={{ height: openFaqIndex === i ? 'auto' : 0, opacity: openFaqIndex === i ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 -mt-2">
+                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
+                    </div>
+                  </motion.div>
+                </div>
               </motion.div>
             ))}
           </div>

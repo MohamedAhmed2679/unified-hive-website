@@ -100,9 +100,11 @@ const HomePage = () => {
   ];
 
   const faqs = [
-    { q: "Can I switch plans later?", a: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect in the next billing cycle." },
-    { q: "Do you offer custom consulting?", a: "Absolutely. Our Enterprise plan is fully customizable, and we also offer project-based consulting rates." },
-    { q: "What is your cancellation policy?", a: "Monthly plans can be cancelled with 30 days notice. Annual plans are non-refundable but can be transferred." },
+    { q: "Can I switch plans later?", a: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect in the next billing cycle. No penalties or fees for switching." },
+    { q: "Do you offer custom consulting?", a: "Absolutely. Our Enterprise plan is fully customizable, and we also offer project-based consulting rates. Contact us to discuss your specific requirements." },
+    { q: "What is your cancellation policy?", a: "Monthly plans can be cancelled with 30 days notice. Annual plans are non-refundable but can be transferred to another organization." },
+    { q: "How quickly can you start a project?", a: "Most engagements begin within 1–2 days of signing. We start with an assessment phase that typically takes 2–4 days, followed by implementation." },
+    { q: "Do you work with companies outside the US?", a: "Yes, we serve clients across the Globe 24*7 support. Our team works remotely and can accommodate multiple time zones." },
   ];
 
   const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -323,15 +325,17 @@ const HomePage = () => {
           </motion.div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <motion.details key={i} className="glass-card overflow-hidden group" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
-                <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none text-left p-6">
-                  <span className="pr-4">{faq.q}</span>
-                  <ChevronDown className="group-open:rotate-180 transition-transform duration-300 text-muted-foreground flex-shrink-0" size={18} />
-                </summary>
-                <div className="px-6 pb-6 -mt-2">
-                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
-                </div>
-              </motion.details>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
+                <details className="glass-card overflow-hidden group relative z-20" style={{ pointerEvents: 'auto' }}>
+                  <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none text-left p-6 select-none tap-target">
+                    <span className="pr-4">{faq.q}</span>
+                    <ChevronDown className="group-open:rotate-180 transition-transform duration-300 text-muted-foreground flex-shrink-0" size={18} />
+                  </summary>
+                  <div className="px-6 pb-6 -mt-2">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
+              </motion.div>
             ))}
           </div>
         </div>

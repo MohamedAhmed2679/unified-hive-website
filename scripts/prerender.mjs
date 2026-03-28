@@ -177,6 +177,16 @@ async function main() {
   });
 
   const page = await browser.newPage();
+
+  // Block third-party widgets like Tawk.to from being baked into the static HTML
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    if (req.url().includes('tawk.to')) {
+      req.abort();
+    } else {
+      req.continue();
+    }
+  });
   
   // Set viewport and user agent for consistent rendering
   await page.setViewport({ width: 1280, height: 800 });

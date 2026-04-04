@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Shield, Zap, TrendingUp, ArrowRight, ChevronDown, Facebook, Instagram, Twitter, Youtube, Linkedin, CheckCircle } from 'lucide-react';
 import AnimatedContent from '@/components/AnimatedContent';
@@ -9,11 +9,14 @@ import { UHAnalytics } from '@/lib/analytics';
 import { Switch } from "@/components/ui/switch";
 import TrustSignals from '@/components/TrustSignals';
 import Testimonials from '@/components/Testimonials';
+import TextRotate from '@/components/TextRotate';
+import MagneticButton from '@/components/MagneticButton';
 
 /* ── Animated Counter ── */
 const AnimatedCounter = ({ value, suffix = '', prefix = '' }) => {
   const numericValue = parseInt(value.replace(/[^0-9]/g, ''));
   const [count, setCount] = useState(numericValue);
+  const [done, setDone] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -27,16 +30,25 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '' }) => {
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.round(eased * numericValue));
       if (progress < 1) requestAnimationFrame(step);
+      else setDone(true);
     };
     requestAnimationFrame(step);
   }, [inView, numericValue]);
 
-  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+  return (
+    <motion.span
+      ref={ref}
+      animate={done ? { scale: [1, 1.12, 1] } : {}}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
+      {prefix}{count}{suffix}
+    </motion.span>
+  );
 };
 
 /* ── Pricing Card ── */
 const PricingCard = ({ plan, billingCycle, featured }) => (
-  <div className={`glass-card p-6 md:p-8 flex flex-col h-full transition-all duration-500 relative group w-full ${featured ? 'ring-1 ring-[#FFD700]/30' : ''}`}>
+  <div className={`glass-card p-6 md:p-8 flex flex-col h-full transition-all duration-500 relative group w-full ${featured ? 'ring-1 ring-[#FFD700]/30 popular-card-glow' : ''}`}>
     <div className="absolute top-4 left-4 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider bg-[#001F3F]/[0.04] dark:bg-white/[0.06] text-[#001F3F]/50 dark:text-white/50 border border-[#001F3F]/[0.08] dark:border-white/[0.06]">
       Customizable
     </div>
@@ -111,6 +123,8 @@ const HomePage = () => {
   const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
   const itemVariants = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } };
 
+  const heroWords = ['Intelligent IT', 'Zero Trust Security', 'Cloud Migration', 'DevOps Automation'];
+
   return (
     <>
       <Helmet>
@@ -168,7 +182,7 @@ const HomePage = () => {
 
           <motion.h1 variants={itemVariants} className="text-display font-heading text-foreground mt-4 mb-6 px-2">
             Secure Your Future with{' '}
-            <span className="text-gradient">Intelligent IT</span>
+            <TextRotate words={heroWords} interval={3000} className="text-gradient" />
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed mb-10">
@@ -176,16 +190,20 @@ const HomePage = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mb-12">
-            <Button asChild className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('book_demo', 'hero_cta')}>
-              <Link to="/book-demo" className="w-full sm:w-auto flex items-center justify-center">
-                Book Demo <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="bg-transparent border border-[#001F3F]/[0.15] dark:border-white/[0.1] text-foreground hover:bg-[#001F3F]/[0.04] dark:hover:bg-white/[0.04] text-base px-8 py-6 rounded-full w-full sm:w-auto transition-all duration-300" onClick={() => UHAnalytics.trackClick('explore_solutions', 'hero_cta')}>
-              <Link to="/solutions" className="w-full sm:w-auto flex items-center justify-center">
-                Explore Solutions
-              </Link>
-            </Button>
+            <MagneticButton strength={6}>
+              <Button asChild className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('book_demo', 'hero_cta')}>
+                <Link to="/book-demo" className="w-full sm:w-auto flex items-center justify-center">
+                  Book Demo <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+            </MagneticButton>
+            <MagneticButton strength={6}>
+              <Button asChild variant="outline" className="bg-transparent border border-[#001F3F]/[0.15] dark:border-white/[0.1] text-foreground hover:bg-[#001F3F]/[0.04] dark:hover:bg-white/[0.04] text-base px-8 py-6 rounded-full w-full sm:w-auto transition-all duration-300" onClick={() => UHAnalytics.trackClick('explore_solutions', 'hero_cta')}>
+                <Link to="/solutions" className="w-full sm:w-auto flex items-center justify-center">
+                  Explore Solutions
+                </Link>
+              </Button>
+            </MagneticButton>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex gap-5 sm:gap-8 justify-center items-center flex-wrap">
@@ -263,10 +281,14 @@ const HomePage = () => {
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
               >
-                <div className="glass-card p-7 md:p-8 h-full group">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className="glass-card p-7 md:p-8 h-full group cursor-pointer">
+                  <motion.div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg`}
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                  >
                     <item.icon size={24} className="text-white" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground font-heading mb-3">{item.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
@@ -298,11 +320,19 @@ const HomePage = () => {
                 className="data-[state=checked]:bg-[#06B6D4] data-[state=unchecked]:bg-white/10 dark:data-[state=unchecked]:bg-white/10"
               />
               <span className={`text-sm font-semibold ${billingCycle === 'annual' ? 'text-foreground' : 'text-muted-foreground'}`}>Annual</span>
-              {billingCycle === 'annual' && (
-                <motion.span initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="bg-[#06B6D4]/10 text-[#06B6D4] text-xs font-bold px-2.5 py-1 rounded-full border border-[#06B6D4]/20">
-                  Save 20%
-                </motion.span>
-              )}
+              <AnimatePresence>
+                {billingCycle === 'annual' && (
+                  <motion.span
+                    initial={{ opacity: 0, x: -10, scale: 0.8 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: -10, scale: 0.8 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                    className="bg-[#06B6D4]/10 text-[#06B6D4] text-xs font-bold px-2.5 py-1 rounded-full border border-[#06B6D4]/20"
+                  >
+                    Save 20%
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
 
@@ -328,7 +358,7 @@ const HomePage = () => {
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <div 
-                  className="glass-card overflow-hidden group cursor-pointer" 
+                  className={`glass-card overflow-hidden group cursor-pointer faq-accent-bar ${openFaqIndex === i ? 'faq-open' : ''}`}
                   onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
                   role="button"
                   tabIndex={0}
@@ -336,19 +366,29 @@ const HomePage = () => {
                 >
                   <div className="font-bold text-foreground flex justify-between items-center font-heading list-none text-left p-6 select-none tap-target">
                     <span className="pr-4">{faq.q}</span>
-                    <ChevronDown className={`transition-transform duration-300 text-muted-foreground flex-shrink-0 ${openFaqIndex === i ? 'rotate-180' : ''}`} size={18} />
+                    <motion.div
+                      animate={{ rotate: openFaqIndex === i ? 180 : 0 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      <ChevronDown className="text-muted-foreground flex-shrink-0" size={18} />
+                    </motion.div>
                   </div>
                   
-                  <motion.div 
-                    initial={false}
-                    animate={{ height: openFaqIndex === i ? 'auto' : 0, opacity: openFaqIndex === i ? 1 : 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 -mt-2">
-                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
-                    </div>
-                  </motion.div>
+                  <AnimatePresence initial={false}>
+                    {openFaqIndex === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 -mt-2">
+                          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{faq.a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}
@@ -359,16 +399,19 @@ const HomePage = () => {
       {/* ──── CTA Strip ──── */}
       <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] via-[#F0C800] to-[#FFD700]" />
+        <div className="absolute inset-0 shimmer-overlay" />
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left relative z-10">
           <div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#050A14] font-heading mb-2">Ready to modernize your IT?</h2>
             <p className="text-[#050A14]/70 font-medium">Schedule your free support call today.</p>
           </div>
-          <Button asChild className="w-full md:w-auto bg-[#050A14] text-white hover:bg-[#0A1228] text-lg px-8 py-6 rounded-full shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 font-semibold" onClick={() => UHAnalytics.trackClick('book_demo', 'footer_cta')}>
-            <Link to="/book-demo">
-              Book Demo
-            </Link>
-          </Button>
+          <MagneticButton strength={10}>
+            <Button asChild className="w-full md:w-auto bg-[#050A14] text-white hover:bg-[#0A1228] text-lg px-8 py-6 rounded-full shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 font-semibold" onClick={() => UHAnalytics.trackClick('book_demo', 'footer_cta')}>
+              <Link to="/book-demo">
+                Book Demo
+              </Link>
+            </Button>
+          </MagneticButton>
         </div>
       </section>
     </>

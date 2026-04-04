@@ -297,6 +297,72 @@ h6 {
   }
 }
 
+/* ── Marquee (Testimonials infinite scroll) ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover,
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ── Shimmer sweep (CTA strip) ── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 60%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Popular pricing card glow ── */
+@keyframes popular-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255,215,0,0.15), 0 0 45px rgba(255,215,0,0.05); }
+  50%      { box-shadow: 0 0 25px rgba(255,215,0,0.25), 0 0 60px rgba(255,215,0,0.10); }
+}
+
+.popular-card-glow {
+  animation: popular-glow 3s ease-in-out infinite;
+}
+
+/* ── FAQ accent bar ── */
+.faq-accent-bar {
+  position: relative;
+}
+.faq-accent-bar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #FFD700, #06B6D4);
+  border-radius: 3px;
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+}
+.faq-accent-bar.faq-open::before {
+  transform: scaleY(1);
+}
+
 @layer utilities {
   .tap-target {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;

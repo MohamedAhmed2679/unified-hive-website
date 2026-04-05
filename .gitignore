@@ -1,1 +1,17 @@
 node_modules
+public/llms.txt
+dist/about/
+dist/blog/
+dist/book-demo/
+dist/contact/
+dist/cookies/
+dist/login/
+dist/method/
+dist/outcomes/
+dist/pricing-engage/
+dist/privacy/
+dist/resources/
+dist/solutions/
+dist/terms/
+dist/trust-center/
+dist/llms.txt

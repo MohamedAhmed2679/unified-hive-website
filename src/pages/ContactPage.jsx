@@ -108,7 +108,7 @@ const ContactPage = () => {
         "mainEntity": {
             "@type": "Organization",
             "name": "Unified Hive",
-            "telephone": "+1-917-781-4487",
+            "telephone": "+1-332-220-0017",
             "email": "info@unifiedhive.com",
             "address": {
                 "@type": "PostalAddress",
@@ -134,7 +134,7 @@ const ContactPage = () => {
             <div className="pt-20">
                 {/* Hero */}
                 <section className="relative py-20 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#050A14] via-[#0A1228] to-[#050A14] dark:opacity-100 opacity-0 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0C0E11] via-[#121519] to-[#0C0E11] dark:opacity-100 opacity-0 pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-white dark:opacity-0 opacity-100 pointer-events-none" />
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                         <AnimatedContent type="text">
@@ -154,13 +154,13 @@ const ContactPage = () => {
 
                             <div className="space-y-6 mb-10">
                                 {/* Phone */}
-                                <a href="tel:+19177814487" className="flex items-start space-x-4 group">
+                                <a href="tel:+13322200017" className="flex items-start space-x-4 group">
                                     <div className="bg-[#FFD700]/10 p-3 rounded-lg border border-[#FFD700]/20 group-hover:bg-[#FFD700]/20 transition-colors">
                                         <Phone size={24} className="text-[#FFD700]" />
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-foreground mb-1 font-heading">Phone</h3>
-                                        <p className="text-muted-foreground group-hover:text-[#FFD700] transition-colors">+1 917 781 4487</p>
+                                        <p className="text-muted-foreground group-hover:text-[#FFD700] transition-colors">+1 332 220 0017</p>
                                         <p className="text-sm text-muted-foreground">Mon-Fri, 9am-6pm EST</p>
                                     </div>
                                 </a>

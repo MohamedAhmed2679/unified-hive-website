@@ -23,7 +23,7 @@ const TrustSignals = () => {
 
  return (
  <section
- className="bg-[#0A1228] border-t border-b border-white/[0.06] py-16 px-4 sm:px-6 lg:px-8"
+ className="bg-[#121519] border-t border-b border-white/[0.06] py-16 px-4 sm:px-6 lg:px-8"
  aria-label="Trust signals and credentials"
  >
  {/* Stats */}

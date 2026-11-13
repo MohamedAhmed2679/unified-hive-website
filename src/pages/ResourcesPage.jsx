@@ -37,7 +37,7 @@ const ResourcesPage = () => {
  <meta name="description"content="Download free resources, blueprints, and playbooks to help you navigate the complex world of IT infrastructure."/>
  </Helmet>
  
- <div className="pt-24 pb-16 bg-gray-50 dark:bg-[#050A14] min-h-screen">
+ <div className="pt-24 pb-16 bg-gray-50 dark:bg-[#0C0E11] min-h-screen">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="mb-12 text-center">
  <h1 className="text-4xl font-bold text-foreground mb-4 font-heading">Resources Hub</h1>
@@ -48,7 +48,7 @@ const ResourcesPage = () => {
  {guides.map((guide, index) => (
  <AnimatedContent key={index} type="fade"delay={index * 0.1}>
  <Link to={`/resources/${guide.slug}`} className="block h-full group">
- <div className="bg-white dark:bg-[#0A1228] rounded-xl overflow-hidden shadow-lg dark:shadow-black/20 border border-gray-100 flex flex-col h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
+ <div className="bg-white dark:bg-[#121519] rounded-xl overflow-hidden shadow-lg dark:shadow-black/20 border border-gray-100 flex flex-col h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
  <div className="bg-[#001F3F] p-8 flex items-center justify-center group-hover:bg-[#003366] transition-colors">
  <FileText className="text-[#FFD700] w-16 h-16"/>
  </div>

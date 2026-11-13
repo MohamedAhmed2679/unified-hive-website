@@ -11,7 +11,7 @@ export const websiteContent = {
       "Customer-Centricity: Prioritizing client needs and satisfaction."
     ],
     contact: {
-      phone: "+1 917 781 4487",
+      phone: "+1 332 220 0017",
       email: "Info@unifiedhive.com",
       address: "700 A.D. Mosley Street, Ferris TX 75125, US",
       bookingLink: "https://outlook.office.com/book/UnifiedHive4@Unifiedhive.com/?ismsaljsauthenabled",

@@ -70,7 +70,7 @@ const SolutionTemplate = () => {
             <div className="pt-20">
                 {/* Hero */}
                 <section className="relative py-20 md:py-28 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#050A14] via-[#0A1228] to-[#050A14] dark:opacity-100 opacity-0 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0C0E11] via-[#121519] to-[#0C0E11] dark:opacity-100 opacity-0 pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-white dark:opacity-0 opacity-100 pointer-events-none" />
 
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

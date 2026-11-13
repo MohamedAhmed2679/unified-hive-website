@@ -136,7 +136,7 @@ const BlogPage = () => {
  </script>
  </Helmet>
 
- <a href="#main-content"className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#0A1228] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
+ <a href="#main-content"className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#121519] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
  Skip to main content
  </a>
 
@@ -206,7 +206,7 @@ const BlogPage = () => {
  {filteredPosts.length > 0 ? (
  filteredPosts.map((post, index) => (
  <AnimatedContent key={post.id} type="fade"delay={index * 0.1}>
- <article className="flex flex-col md:flex-row gap-6 bg-white dark:bg-[#0A1228] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full">
+ <article className="flex flex-col md:flex-row gap-6 bg-white dark:bg-[#121519] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full">
  <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
  <img 
  src={post.image} 

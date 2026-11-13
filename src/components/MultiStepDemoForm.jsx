@@ -89,7 +89,7 @@ const MultiStepDemoForm = () => {
  };
 
  return (
- <div className="bg-white dark:bg-[#0A1228] p-8 rounded-2xl shadow-xl dark:shadow-black/30 border border-gray-100 max-w-lg mx-auto w-full">
+ <div className="bg-white dark:bg-[#121519] p-8 rounded-2xl shadow-xl dark:shadow-black/30 border border-gray-100 max-w-lg mx-auto w-full">
  <div className="mb-8">
  <div className="flex items-center justify-between mb-4">
  <span className={`h-2 flex-1 rounded-full mr-2 ${step >= 1 ? 'bg-[#FFC107]' : 'bg-gray-200'}`}></span>

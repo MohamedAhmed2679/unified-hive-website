@@ -50,13 +50,16 @@ const Navigation = () => {
       path: '/solutions',
       children: [
         { name: 'All Solutions', path: '/solutions' },
-        { name: 'Modernization', path: '/solutions/migration' },
-        { name: 'DevOps', path: '/solutions/cloud-devops' },
-        { name: 'FinOps', path: '/solutions/finops' },
+        { name: 'Microsoft 365 Migration', path: '/solutions/microsoft-365-migration' },
+        { name: 'Secure 365', path: '/solutions/secure-365' },
+        { name: 'Copilot Readiness', path: '/solutions/sharepoint-security' },
+        { name: 'Automation', path: '/solutions/power-automate-workflows' },
+        { name: 'Managed 365', path: '/solutions/managed-365' },
         { name: 'Zero Trust', path: '/solutions/zero-trust-security' },
-        { name: 'Graphic Designing', path: '/solutions/graphic-designing' }
+        { name: 'Cloud & DevOps', path: '/solutions/cloud-devops' }
       ]
     },
+    { name: 'Help Desk', path: '/global-help-desk' },
     { name: 'Method', path: '/method' },
     { name: 'Outcomes', path: '/outcomes' },
     { name: 'Resources', path: '/resources' },
@@ -71,7 +74,7 @@ const Navigation = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-500",
         scrolled || !isHomePage
-          ? "bg-white/80 dark:bg-[#050A14]/80 backdrop-blur-xl border-b border-[#001F3F]/[0.06] dark:border-white/[0.04] py-2 md:py-3"
+          ? "bg-white/80 dark:bg-[#0C0E11]/80 backdrop-blur-xl border-b border-[#001F3F]/[0.06] dark:border-white/[0.04] py-2 md:py-3"
           : "bg-transparent py-4 md:py-5"
       )}
       style={{ minHeight: 'var(--header-h)' }}
@@ -112,7 +115,7 @@ const Navigation = () => {
                   <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#001F3F]/70 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white transition-colors duration-300 focus:outline-none tap-target">
                     {link.name} <ChevronDown size={14} />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-[#0A1228]/95 backdrop-blur-xl border border-white/[0.06] p-2 min-w-[200px] z-[60] shadow-2xl shadow-black/40">
+                  <DropdownMenuContent className="bg-[#121519]/95 backdrop-blur-xl border border-white/[0.06] p-2 min-w-[200px] z-[60] shadow-2xl shadow-black/40">
                     {link.children.map((child) => (
                       <DropdownMenuItem key={child.name} className="focus:bg-white/[0.04] cursor-pointer rounded-lg">
                         <Link
@@ -200,7 +203,7 @@ const Navigation = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-white/98 dark:bg-[#050A14]/98 backdrop-blur-2xl z-40 lg:hidden pt-24 px-6 overflow-y-auto"
+            className="fixed inset-0 bg-white/98 dark:bg-[#0C0E11]/98 backdrop-blur-2xl z-40 lg:hidden pt-24 px-6 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

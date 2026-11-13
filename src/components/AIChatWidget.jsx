@@ -170,7 +170,7 @@ const AIChatWidget = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed bottom-24 left-4 z-[999] w-[90vw] md:w-[400px] h-[600px] max-h-[75vh] bg-white dark:bg-[#0A1228] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-white/[0.06] ring-1 ring-black/5"
+                        className="fixed bottom-24 left-4 z-[999] w-[90vw] md:w-[400px] h-[600px] max-h-[75vh] bg-white dark:bg-[#121519] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-white/[0.06] ring-1 ring-black/5"
                     >
                         {/* Header */}
                         <div className="bg-[#001F3F] p-4 flex items-center justify-between text-white shrink-0 shadow-md relative overflow-hidden">
@@ -202,7 +202,7 @@ const AIChatWidget = () => {
                         </div>
 
                         {/* Messages Area */}
-                        <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-gray-50/50 dark:bg-[#050A14]/50">
+                        <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-gray-50/50 dark:bg-[#0C0E11]/50">
                             {messages.map((msg, idx) => (
                                 <motion.div
                                     key={idx}
@@ -226,7 +226,7 @@ const AIChatWidget = () => {
                                         "p-3.5 rounded-2xl text-sm shadow-sm",
                                         msg.role === 'user'
                                             ? "bg-[#001F3F] text-white rounded-tr-none"
-                                            : "bg-white dark:bg-[#0A1228] text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-white/[0.08] rounded-tl-none"
+                                            : "bg-white dark:bg-[#121519] text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-white/[0.08] rounded-tl-none"
                                     )}>
                                         {msg.role === 'assistant' ? (
                                             <ReactMarkdown components={MarkdownComponents}>
@@ -244,7 +244,7 @@ const AIChatWidget = () => {
                                     <div className="w-8 h-8 rounded-full bg-[#001F3F] text-[#FFD700] flex items-center justify-center shrink-0">
                                         <Bot size={16} />
                                     </div>
-                                    <div className="bg-white dark:bg-[#0A1228] border border-gray-100 dark:border-white/[0.08] p-4 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-1.5">
+                                    <div className="bg-white dark:bg-[#121519] border border-gray-100 dark:border-white/[0.08] p-4 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-1.5">
                                         <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
                                         <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
                                         <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
@@ -256,7 +256,7 @@ const AIChatWidget = () => {
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="bg-white dark:bg-[#0A1228] border border-[#FFD700] rounded-xl p-4 shadow-md mx-4"
+                                    className="bg-white dark:bg-[#121519] border border-[#FFD700] rounded-xl p-4 shadow-md mx-4"
                                 >
                                     <h4 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
                                         <Calendar size={16} /> Schedule Demo
@@ -289,7 +289,7 @@ const AIChatWidget = () => {
                         </div>
 
                         {/* Input Area */}
-                        <div className="p-4 bg-white dark:bg-[#0A1228] border-t border-gray-100 shrink-0">
+                        <div className="p-4 bg-white dark:bg-[#121519] border-t border-gray-100 shrink-0">
                             <form onSubmit={handleSendMessage} className="flex gap-2 items-end">
                                 <textarea
                                     ref={inputRef}
@@ -302,7 +302,7 @@ const AIChatWidget = () => {
                                         }
                                     }}
                                     placeholder="Ask about pricing, services, or support..."
-                                    className="flex-1 bg-gray-50 dark:bg-[#050A14] border border-gray-200 dark:border-white/[0.06] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFD700]/50 transition-all resize-none max-h-24 min-h-[44px]"
+                                    className="flex-1 bg-gray-50 dark:bg-[#0C0E11] border border-gray-200 dark:border-white/[0.06] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFD700]/50 transition-all resize-none max-h-24 min-h-[44px]"
                                     rows={1}
                                 />
                                 <Button

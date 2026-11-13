@@ -288,7 +288,7 @@ const AboutPage = () => {
  </section>
 
  {/* Culture Section */}
- <section className="bg-[#050A14] text-white py-20">
+ <section className="bg-[#0C0E11] text-white py-20">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="text-center mb-12">
  <h2 className="text-3xl md:text-4xl font-bold mb-6 font-heading">

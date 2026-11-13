@@ -14,7 +14,7 @@ const BookingEmbed = ({ className = '' }) => {
                 href={BOOKING_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#050A14] font-bold rounded-full hover:shadow-lg hover:shadow-[#FFD700]/25 transition-all duration-300 hover:-translate-y-0.5 text-base"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#0C0E11] font-bold rounded-full hover:shadow-lg hover:shadow-[#FFD700]/25 transition-all duration-300 hover:-translate-y-0.5 text-base"
             >
                 <Calendar size={20} />
                 Schedule online

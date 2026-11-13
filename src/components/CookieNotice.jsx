@@ -35,7 +35,7 @@ const CookieNotice = () => {
  exit={{ y: 100, opacity: 0 }}
  className="fixed bottom-0 left-0 right-0 z-50 p-4"
  >
- <div className="max-w-7xl mx-auto bg-white dark:bg-[#0A1228] rounded-lg shadow-2xl border border-gray-200 dark:border-white/[0.06] p-6 md:p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+ <div className="max-w-7xl mx-auto bg-white dark:bg-[#121519] rounded-lg shadow-2xl border border-gray-200 dark:border-white/[0.06] p-6 md:p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
  <div className="flex-1">
  <h3 className="text-lg font-semibold text-[#001F3F] dark:text-white mb-1 font-heading">We value your privacy</h3>
  <p className="text-sm text-muted-foreground">

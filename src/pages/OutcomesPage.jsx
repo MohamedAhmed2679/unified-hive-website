@@ -40,7 +40,7 @@ const OutcomesPage = () => {
  </div>
  </section>
 
- <section className="py-20 bg-gray-50 dark:bg-[#050A14]">
+ <section className="py-20 bg-gray-50 dark:bg-[#0C0E11]">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <div className="grid md:grid-cols-2 gap-8">
  {cases.map((study, i) => (
@@ -73,7 +73,7 @@ const OutcomesPage = () => {
  </div>
  </section>
 
- <section className="py-20 bg-white dark:bg-[#0A1228]">
+ <section className="py-20 bg-white dark:bg-[#121519]">
  <div className="max-w-4xl mx-auto px-4 text-center">
  <h2 className="text-3xl font-bold text-foreground mb-6 font-heading">Ready to write your success story?</h2>
  <Link to="/contact">

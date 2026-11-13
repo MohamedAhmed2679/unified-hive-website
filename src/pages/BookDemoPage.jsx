@@ -14,7 +14,7 @@ const BookDemoPage = () => {
  <meta name="description" content="Schedule a direct strategic IT consultation with our technical leadership. Let us audit your infrastructure and map out a Zero Trust, DevOps-driven growth strategy."/>
  </Helmet>
 
- <div className="pt-24 pb-16 min-h-screen bg-white dark:bg-[#0A1228]">
+ <div className="pt-24 pb-16 min-h-screen bg-white dark:bg-[#121519]">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <div className="grid lg:grid-cols-2 gap-12 items-start">
  
@@ -34,7 +34,7 @@ const BookDemoPage = () => {
  </div>
  
  {/* Profile Card */}
- <div className="bg-white dark:bg-[#0A1228] p-8 rounded-2xl shadow-lg dark:shadow-black/20 border border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-6 relative overflow-hidden">
+ <div className="bg-white dark:bg-[#121519] p-8 rounded-2xl shadow-lg dark:shadow-black/20 border border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-6 relative overflow-hidden">
  
  <div className="relative">
  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#FFD700] overflow-hidden shadow-md flex-shrink-0">
@@ -72,7 +72,7 @@ const BookDemoPage = () => {
 "Direct answers to technical implementation questions",
 "No sales pressure—just engineering expertise"
  ].map((item, index) => (
- <div key={index} className="flex items-start gap-3 bg-white dark:bg-[#0A1228] p-4 rounded-lg border border-gray-100 shadow-sm transition-all hover:shadow-md">
+ <div key={index} className="flex items-start gap-3 bg-white dark:bg-[#121519] p-4 rounded-lg border border-gray-100 shadow-sm transition-all hover:shadow-md">
  <CheckCircle className="text-foreground w-6 h-6 flex-shrink-0 mt-0.5 fill-[#FFD700]"/>
  <span className="text-muted-foreground font-medium">{item}</span>
  </div>
@@ -88,7 +88,7 @@ const BookDemoPage = () => {
  transition={{ delay: 0.2 }}
  className="order-1 lg:order-2 flex flex-col items-center"
  >
- <div className="w-full bg-white dark:bg-[#0A1228] rounded-2xl shadow-xl dark:shadow-black/30 border border-gray-200 dark:border-white/[0.06] overflow-hidden min-h-[800px] flex flex-col relative">
+ <div className="w-full bg-white dark:bg-[#121519] rounded-2xl shadow-xl dark:shadow-black/30 border border-gray-200 dark:border-white/[0.06] overflow-hidden min-h-[800px] flex flex-col relative">
  <div className="bg-[#001F3F] p-4 text-white text-center">
  <h3 className="font-bold text-lg font-heading flex items-center justify-center gap-2">
  <Calendar className="w-5 h-5 text-[#FFD700]"/>
@@ -96,8 +96,8 @@ const BookDemoPage = () => {
  </h3>
  </div>
  
-    <div className="flex-1 w-full relative bg-gray-50 dark:bg-[#050A14] flex flex-col items-center justify-center p-10 text-center min-h-[400px]">
-        <div className="bg-white dark:bg-[#0A1228] p-8 rounded-full shadow-inner mb-6 border border-gray-100 dark:border-white/[0.06]">
+    <div className="flex-1 w-full relative bg-gray-50 dark:bg-[#0C0E11] flex flex-col items-center justify-center p-10 text-center min-h-[400px]">
+        <div className="bg-white dark:bg-[#121519] p-8 rounded-full shadow-inner mb-6 border border-gray-100 dark:border-white/[0.06]">
             <Calendar className="w-16 h-16 text-[#001F3F] dark:text-[#FFD700] opacity-80" />
         </div>
         <h4 className="text-xl font-bold font-heading mb-4">Ready to align your IT strategy?</h4>
@@ -106,7 +106,7 @@ const BookDemoPage = () => {
             href="https://outlook.office.com/book/UnifiedHive4@Unifiedhive.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#050A14] font-bold rounded-full hover:shadow-2xl hover:shadow-[#FFD700]/30 transition-all duration-300 hover:scale-105 text-lg"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#0C0E11] font-bold rounded-full hover:shadow-2xl hover:shadow-[#FFD700]/30 transition-all duration-300 hover:scale-105 text-lg"
         >
             <Calendar size={24} />
             Schedule online
@@ -114,7 +114,7 @@ const BookDemoPage = () => {
         </a>
     </div>
 
-    <div className="p-3 bg-gray-50 dark:bg-[#050A14] text-center text-[10px] text-gray-400 border-t border-gray-100">
+    <div className="p-3 bg-gray-50 dark:bg-[#0C0E11] text-center text-[10px] text-gray-400 border-t border-gray-100">
         <p>Powered by Microsoft Bookings</p>
     </div>
  </div>

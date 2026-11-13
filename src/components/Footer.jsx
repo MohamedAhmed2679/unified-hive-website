@@ -37,11 +37,11 @@ const socialLinks = [
   { name: "LinkedIn", icon: LinkedInIcon, url: "https://www.linkedin.com/company/unifiedhive" },
   { name: "X", icon: XIcon, url: "https://x.com/UnifiedHive" },
   { name: "Facebook", icon: FacebookIcon, url: "https://www.facebook.com/profile.php?id=61585777135146" },
-  { name: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/unifiedhive?igsh=MTJpYzBnYzdib2J3Yg%3D%3D&utm_source=qr" },
-  { name: "TikTok", icon: TikTokIcon, url: "https://www.tiktok.com/@unifiedhive?_r=1&_t=ZS-92WVvdL70nw" },
+  { name: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/unifiedhive" },
+  { name: "TikTok", icon: TikTokIcon, url: "https://www.tiktok.com/@unifiedhive" },
   { name: "YouTube", icon: YouTubeIcon, url: "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA" },
   { name: "GitHub", icon: GitHubIcon, url: "https://github.com/Unifiedhive" },
-  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/u/unifiedhive/s/maZUsP5lmO" },
+  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/user/unifiedhive" },
 ];
 
 const Footer = () => {
@@ -69,7 +69,7 @@ const Footer = () => {
       {/* Gradient glow line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FFD700]/30 to-transparent" />
 
-      <div className="absolute inset-0 bg-[#050A14] dark:opacity-100 opacity-0" />
+      <div className="absolute inset-0 bg-[#0C0E11] dark:opacity-100 opacity-0" />
       <div className="absolute inset-0 bg-[#001F3F] dark:opacity-0 opacity-100" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16 relative z-10 text-white">
@@ -110,6 +110,7 @@ const Footer = () => {
                 { name: "About", path: "/about" },
                 { name: "Blog", path: "/blog" },
                 { name: "Contact", path: "/contact" },
+                { name: "Global Help Desk", path: "/global-help-desk" },
                 { name: "Book a Demo", path: "/book-demo" }
               ].map(link => (
                 <li key={link.name}>
@@ -124,9 +125,9 @@ const Footer = () => {
             <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#FFD700] mb-5 block">Contact</span>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="tel:+201151152279" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
+                <a href="tel:+13322200017" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
                   <Phone size={16} className="mt-0.5 text-[#06B6D4] flex-shrink-0" />
-                  <span className="text-gray-400">+20 115 115 2279</span>
+                  <span className="text-gray-400">+1 332 220 0017</span>
                 </a>
               </li>
               <li>

@@ -11,7 +11,7 @@ const TrustCenterPage = () => {
  <meta name="description"content="Unifiedhive Trust Center: Security, Compliance, and Availability information."/>
  </Helmet>
  
- <div className="pt-24 pb-16 bg-white dark:bg-[#0A1228]">
+ <div className="pt-24 pb-16 bg-white dark:bg-[#121519]">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="mb-12">
  <h1 className="text-4xl font-bold text-[#001F3F] dark:text-white mb-4 font-heading">Trust Center</h1>

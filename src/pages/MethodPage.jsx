@@ -45,7 +45,7 @@ const MethodPage = () => {
  <meta name="description"content="Discover the Unifiedhive 4-step methodology: Assess, Architect, Implement, and Improve. A proven framework for IT success."/>
  </Helmet>
  
- <div className="pt-24 pb-16 bg-white dark:bg-[#0A1228]"data-analytics-view="method_page">
+ <div className="pt-24 pb-16 bg-white dark:bg-[#121519]"data-analytics-view="method_page">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="text-center max-w-3xl mx-auto mb-20">
  <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-heading">
@@ -63,7 +63,7 @@ const MethodPage = () => {
  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
  {steps.map((step, index) => (
  <AnimatedContent key={index} type="fade"delay={index * 0.2}>
- <div className="bg-white dark:bg-[#0A1228] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100 h-full hover:-translate-y-2 transition-transform duration-300">
+ <div className="bg-white dark:bg-[#121519] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100 h-full hover:-translate-y-2 transition-transform duration-300">
  <div className="flex items-center justify-between mb-6">
  <div className="w-16 h-16 bg-[#001F3F] rounded-full flex items-center justify-center text-[#FFD700]">
  <step.icon size={32} />

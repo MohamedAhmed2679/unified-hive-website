@@ -47,7 +47,7 @@ const SolutionsPage = () => {
             <div className="pt-20">
                 {/* Hero */}
                 <section className="relative py-24 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#050A14] via-[#0A1228] to-[#050A14] dark:opacity-100 opacity-0 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0C0E11] via-[#121519] to-[#0C0E11] dark:opacity-100 opacity-0 pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-white dark:opacity-0 opacity-100 pointer-events-none" />
 
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -105,7 +105,7 @@ const SolutionsPage = () => {
                                     key={tag.id}
                                     onClick={() => setActiveTag(tag.id)}
                                     className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeTag === tag.id
-                                            ? 'bg-[#FFD700] text-[#050A14] shadow-lg shadow-[#FFD700]/20'
+                                            ? 'bg-[#FFD700] text-[#0C0E11] shadow-lg shadow-[#FFD700]/20'
                                             : 'bg-white/[0.04] dark:bg-white/[0.04] text-muted-foreground hover:bg-white/[0.08] dark:hover:bg-white/[0.08] border border-[#001F3F]/[0.08] dark:border-white/[0.06]'
                                         }`}
                                 >
@@ -197,13 +197,13 @@ const SolutionsPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#F0C800]" />
                     <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
                         <AnimatedContent type="text">
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#050A14] mb-4 font-heading">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#0C0E11] mb-4 font-heading">
                                 Ready to Transform Your Business?
                             </h2>
-                            <p className="text-lg text-[#050A14]/70 mb-8 max-w-2xl mx-auto">
+                            <p className="text-lg text-[#0C0E11]/70 mb-8 max-w-2xl mx-auto">
                                 Schedule a free consultation with our experts. No pressure, no jargon — just solutions that work.
                             </p>
-                            <Button asChild className="bg-[#050A14] hover:bg-[#0A1228] text-white font-semibold text-lg px-10 py-6 rounded-full">
+                            <Button asChild className="bg-[#0C0E11] hover:bg-[#121519] text-white font-semibold text-lg px-10 py-6 rounded-full">
                                 <Link to="/book-demo">
                                     Book Free Consultation <ArrowRight className="ml-2" size={20} />
                                 </Link>

@@ -180,8 +180,8 @@ const SignUpPage = () => {
  <meta property="og:image"content="https://horizons-cdn.hostinger.com/3d5f6b13-c880-47b3-8cfb-48f3d18da893/32e2f0ba808a982fc7905f7808be64c1.png"/>
  </Helmet>
 
- <div className="min-h-screen pt-24 pb-12 flex items-center justify-center bg-gray-50 dark:bg-[#050A14] px-4 sm:px-6 lg:px-8">
- <div className="max-w-2xl w-full space-y-8 bg-white dark:bg-[#0A1228] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
+ <div className="min-h-screen pt-24 pb-12 flex items-center justify-center bg-gray-50 dark:bg-[#0C0E11] px-4 sm:px-6 lg:px-8">
+ <div className="max-w-2xl w-full space-y-8 bg-white dark:bg-[#121519] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
  <AnimatedContent type="text"className="text-center">
  <Link to="/"className="inline-block mb-6">
  <img 
@@ -247,7 +247,7 @@ const SignUpPage = () => {
  <div className="w-full border-t border-gray-300 dark:border-white/[0.08]"></div>
  </div>
  <div className="relative flex justify-center text-sm">
- <span className="px-2 bg-white dark:bg-[#0A1228] text-muted-foreground">Or continue with email</span>
+ <span className="px-2 bg-white dark:bg-[#121519] text-muted-foreground">Or continue with email</span>
  </div>
  </div>
 
@@ -265,7 +265,7 @@ const SignUpPage = () => {
  id="firstName"
  name="firstName"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="John"
  value={formData.firstName}
  onChange={handleInputChange}
@@ -285,7 +285,7 @@ const SignUpPage = () => {
  id="lastName"
  name="lastName"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="Doe"
  value={formData.lastName}
  onChange={handleInputChange}
@@ -305,7 +305,7 @@ const SignUpPage = () => {
  id="email"
  name="email"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="john@company.com"
  value={formData.email}
  onChange={handleInputChange}
@@ -328,7 +328,7 @@ const SignUpPage = () => {
  id="phone"
  name="phone"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="+1 (555) 000-0000"
  value={formData.phone}
  onChange={handleInputChange}
@@ -348,7 +348,7 @@ const SignUpPage = () => {
  id="jobTitle"
  name="jobTitle"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="CTO"
  value={formData.jobTitle}
  onChange={handleInputChange}
@@ -368,7 +368,7 @@ const SignUpPage = () => {
  id="company"
  name="company"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="Unifiedhive Inc."
  value={formData.company}
  onChange={handleInputChange}
@@ -388,7 +388,7 @@ const SignUpPage = () => {
  id="password"
  name="password"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="••••••••"
  value={formData.password}
  onChange={handleInputChange}
@@ -433,7 +433,7 @@ const SignUpPage = () => {
  id="confirmPassword"
  name="confirmPassword"
  required
- className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#0A1228] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
+ className="pl-10 w-full p-3 bg-white/[0.04] dark:bg-white/[0.04] border border-white/[0.08] rounded-lg bg-white dark:bg-[#121519] dark:bg-white/10 dark:text-white focus:ring-[#FFD700] focus:border-[#FFD700] outline-none"
  placeholder="••••••••"
  value={formData.confirmPassword}
  onChange={handleInputChange}
@@ -451,7 +451,7 @@ const SignUpPage = () => {
  <input
  id="terms"
  type="checkbox"
- className="w-4 h-4 border border-gray-300 dark:border-white/[0.08] rounded bg-gray-50 dark:bg-[#050A14] focus:ring-3 focus:ring-[#FFD700]"
+ className="w-4 h-4 border border-gray-300 dark:border-white/[0.08] rounded bg-gray-50 dark:bg-[#0C0E11] focus:ring-3 focus:ring-[#FFD700]"
  checked={agreed}
  onChange={(e) => setAgreed(e.target.checked)}
  />

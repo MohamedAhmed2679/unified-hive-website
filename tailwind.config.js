@@ -52,7 +52,7 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
-				navy: { DEFAULT: '#001F3F', light: '#003366', deep: '#050A14' },
+				navy: { DEFAULT: '#001F3F', light: '#003366', deep: '#0C0E11' },
 				gold: { DEFAULT: '#FFD700', hover: '#F0C800', light: '#FFE44D' },
 				cyan: { DEFAULT: '#06B6D4', light: '#22D3EE', dark: '#0891B2' },
 				violet: { DEFAULT: '#8B5CF6', light: '#A78BFA' },

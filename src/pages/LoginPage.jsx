@@ -43,8 +43,8 @@ const LoginPage = () => {
  <meta name="description"content="Login to your Unifiedhive account."/>
  </Helmet>
 
- <div className="min-h-screen pt-24 pb-12 flex items-center justify-center bg-gray-50 dark:bg-[#050A14] px-4 sm:px-6 lg:px-8">
- <AnimatedContent type="fade"className="max-w-md w-full space-y-8 bg-white dark:bg-[#0A1228] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
+ <div className="min-h-screen pt-24 pb-12 flex items-center justify-center bg-gray-50 dark:bg-[#0C0E11] px-4 sm:px-6 lg:px-8">
+ <AnimatedContent type="fade"className="max-w-md w-full space-y-8 bg-white dark:bg-[#121519] p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
  <div className="text-center">
  <Link to="/"className="inline-block mb-6">
  <img 

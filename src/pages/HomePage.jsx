@@ -3,7 +3,11 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Shield, Zap, TrendingUp, ArrowRight, ChevronDown, Facebook, Instagram, Twitter, Youtube, Linkedin, CheckCircle } from 'lucide-react';
+import { Shield, Zap, ArrowRight, ChevronDown, Facebook, Instagram, Youtube, Linkedin, CheckCircle, ArrowRightLeft, Sparkles, Headphones, Briefcase, Landmark, HeartPulse, Scale, Calculator, Building2, Store, Cpu } from 'lucide-react';
+
+const XLogo = ({ size = 22 }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+);
 import AnimatedContent from '@/components/AnimatedContent';
 import { UHAnalytics } from '@/lib/analytics';
 import { Switch } from "@/components/ui/switch";
@@ -53,7 +57,7 @@ const PricingCard = ({ plan, billingCycle, featured }) => (
       Customizable
     </div>
     {plan.isPopular && (
-      <div className="absolute top-4 right-4 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#050A14] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+      <div className="absolute top-4 right-4 bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#0C0E11] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
         Most Popular
       </div>
     )}
@@ -117,19 +121,20 @@ const HomePage = () => {
     { q: "Do you offer custom consulting?", a: "Absolutely. Our Enterprise plan is fully customizable, and we also offer project-based consulting rates. Contact us to discuss your specific requirements." },
     { q: "What is your cancellation policy?", a: "Monthly plans can be cancelled with 30 days notice. Annual plans are non-refundable but can be transferred to another organization." },
     { q: "How quickly can you start a project?", a: "Most engagements begin within 1–2 days of signing. We start with an assessment phase that typically takes 2–4 days, followed by implementation." },
-    { q: "Do you work with companies outside the US?", a: "Yes, we serve clients across the Globe 24*7 support. Our team works remotely and can accommodate multiple time zones." },
+    { q: "Do you work with companies outside the US?", a: "Yes. Unified Hive is remote-first and supports organizations worldwide, with 24/7 support available and coverage across multiple time zones." },
+    { q: "Do you help with Microsoft Copilot?", a: "Yes. We start with a readiness review of permissions, oversharing and data protection in SharePoint, OneDrive and Teams, then help you pilot Copilot with the right users and measure adoption." },
   ];
 
   const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
   const itemVariants = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } };
 
-  const heroWords = ['Intelligent IT', 'Zero Trust Security', 'Cloud Migration', 'DevOps Automation'];
+  const heroWords = ['Microsoft 365', 'Identity & Data Security', 'Copilot Readiness', 'Business Automation'];
 
   return (
     <>
       <Helmet>
-        <title>Unified Hive | Intelligent IT Solutions & Zero Trust Security Consulting</title>
-        <meta name="description" content="Unified Hive engineers resilient IT foundations. From Microsoft 365 migrations to Zero Trust cybersecurity architectures and automated DevOps, we help SMBs and Enterprises scale securely and slash cloud costs." />
+        <title>Unified Hive | Secure, Automate & Manage Microsoft 365 for Growing Organizations</title>
+        <meta name="description" content="Unified Hive helps growing businesses migrate to Microsoft 365, strengthen identity and data security, prepare for Microsoft Copilot, automate business processes, and maintain reliable ongoing governance — worldwide, remote-first." />
         <script type="application/ld+json">
           {JSON.stringify({ 
             "@context": "https://schema.org", 
@@ -137,7 +142,8 @@ const HomePage = () => {
             "name": "Unified Hive", 
             "url": "https://unifiedhive.com", 
             "logo": "https://horizons-cdn.hostinger.com/3d5f6b13-c880-47b3-8cfb-48f3d18da893/65a7b1a51649e52a56ad0d3c553b286e.png",
-            "description": "Enterprise IT Consulting providing Zero Trust Security, Cloud Migrations, and DevOps automation.",
+            "description": "Unified Hive helps growing organizations secure, automate and manage Microsoft 365: migration, identity and data security, Copilot readiness, business process automation and ongoing governance.",
+            "areaServed": "Worldwide",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "700 A.D. Mosley Street",
@@ -149,6 +155,7 @@ const HomePage = () => {
             "contactPoint": {
               "@type": "ContactPoint",
               "email": "info@unifiedhive.com",
+              "telephone": "+1-332-220-0017",
               "contactType": "customer service"
             },
             "sameAs": [
@@ -156,7 +163,10 @@ const HomePage = () => {
               "https://x.com/UnifiedHive",
               "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA",
               "https://www.facebook.com/profile.php?id=61585777135146",
-              "https://www.instagram.com/unifiedhive"
+              "https://www.instagram.com/unifiedhive",
+              "https://www.tiktok.com/@unifiedhive",
+              "https://github.com/Unifiedhive",
+              "https://www.reddit.com/u/unifiedhive"
             ]
           })}
         </script>
@@ -164,7 +174,7 @@ const HomePage = () => {
 
       {/* ──── Hero Section ──── */}
       <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-24 md:pt-20 pb-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050A14] via-[#050A14] to-[#0A1228] dark:opacity-100 opacity-0 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0C0E11] via-[#0C0E11] to-[#121519] dark:opacity-100 opacity-0 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-[#F1F5F9] dark:opacity-0 opacity-100 pointer-events-none z-0" />
 
         <motion.div
@@ -176,24 +186,25 @@ const HomePage = () => {
           <motion.div variants={itemVariants} className="mb-4">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#001F3F]/[0.1] dark:border-white/[0.08] bg-[#001F3F]/[0.03] dark:bg-white/[0.03] text-xs font-medium text-muted-foreground tracking-wider uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
-              Intelligent IT Operations
+              Microsoft 365 · Security · Automation · Global Support
             </span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-display font-heading text-foreground mt-4 mb-6 px-2">
-            Secure Your Future with{' '}
+            Secure, Automate &amp; Manage{' '}
             <TextRotate words={heroWords} interval={3000} className="text-gradient" />
+            <span className="sr-only"> for growing organizations</span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed mb-10">
-            We reduce operational costs by <span className="font-semibold text-foreground">up to 40%</span> and eliminate downtime risks with Zero Trust security and DevOps automation. <Link to="/outcomes" className="text-[#06B6D4] hover:underline text-base">See case studies →</Link>
+            Unified Hive helps growing businesses migrate to Microsoft 365, strengthen identity and data security, prepare for Microsoft Copilot, automate business processes, and maintain reliable ongoing governance. <Link to="/outcomes" className="text-[#06B6D4] hover:underline text-base">See case studies →</Link>
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mb-12">
             <MagneticButton strength={6}>
-              <Button asChild className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('book_demo', 'hero_cta')}>
+              <Button asChild className="btn-premium text-base px-8 py-6 w-full sm:w-auto gap-2" onClick={() => UHAnalytics.trackClick('get_roadmap', 'hero_cta')}>
                 <Link to="/book-demo" className="w-full sm:w-auto flex items-center justify-center">
-                  Book Demo <ArrowRight className="w-4 h-4 ml-2" />
+                  Get Your IT Roadmap <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
             </MagneticButton>
@@ -209,7 +220,7 @@ const HomePage = () => {
           <motion.div variants={itemVariants} className="flex gap-5 sm:gap-8 justify-center items-center flex-wrap">
             {[
               { icon: Linkedin, url: "https://www.linkedin.com/company/unifiedhive", label: "LinkedIn" },
-              { icon: Twitter, url: "https://x.com/UnifiedHive", label: "X (formerly Twitter)" },
+              { icon: XLogo, url: "https://x.com/UnifiedHive", label: "X" },
               { icon: Youtube, url: "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA", label: "YouTube" },
               { icon: Facebook, url: "https://www.facebook.com/profile.php?id=61585777135146", label: "Facebook" },
               { icon: Instagram, url: "https://www.instagram.com/unifiedhive", label: "Instagram" },
@@ -232,7 +243,7 @@ const HomePage = () => {
 
       {/* ──── Stats Bar ──── */}
       <section className="relative py-16 border-y border-white/[0.04] dark:border-white/[0.04]">
-        <div className="absolute inset-0 bg-[#050A14]/50 dark:bg-[#050A14]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
+        <div className="absolute inset-0 bg-[#0C0E11]/50 dark:bg-[#0C0E11]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
         <div className="absolute inset-0 bg-white/50 backdrop-blur-sm dark:opacity-0 opacity-100" />
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
@@ -260,19 +271,22 @@ const HomePage = () => {
 
       {/* ──── Value Props ──── */}
       <section className="relative py-20 md:py-28">
-        <div className="absolute inset-0 bg-[#0A1228]/50 dark:bg-[#0A1228]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
+        <div className="absolute inset-0 bg-[#121519]/50 dark:bg-[#121519]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
         <div className="absolute inset-0 bg-[#F1F5F9]/70 backdrop-blur-sm dark:opacity-0 opacity-100" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-display-sm font-heading text-foreground mb-4">Why Unifiedhive?</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">We don't just fix problems — we re-engineer your IT foundation for growth.</p>
+            <h2 className="text-display-sm font-heading text-foreground mb-4">Why Unified Hive?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">One accountable team to migrate, secure, automate and run your Microsoft 365 environment.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { icon: Shield, title: "Zero Trust Security", desc: "Never trust, always verify. Rigorous security controls that protect your data without slowing your team.", color: "from-[#06B6D4] to-[#0891B2]" },
-              { icon: Zap, title: "DevOps Automation", desc: "Stop manual toil. Self-healing infrastructure and CI/CD pipelines that deploy code 10x faster.", color: "from-[#FFD700] to-[#F0C800]" },
-              { icon: TrendingUp, title: "Cost Optimization", desc: "Cut cloud waste. Our FinOps strategies reduce AWS/Azure spend by 30-50% within the first quarter.", color: "from-[#8B5CF6] to-[#A78BFA]" },
+              { icon: ArrowRightLeft, title: "Microsoft 365 Migration", desc: "Move email, files and Teams from Google Workspace, GoDaddy or on-premises Exchange with a tested cutover and rollback plan.", color: "from-[#06B6D4] to-[#0891B2]", to: "/solutions/microsoft-365-migration" },
+              { icon: Shield, title: "Identity & Data Security", desc: "MFA, Conditional Access, Intune and Defender baselines built on Zero Trust, so access is verified and sensitive data stays protected.", color: "from-[#FFD700] to-[#F0C800]", to: "/solutions/secure-365" },
+              { icon: Sparkles, title: "Copilot Readiness", desc: "Fix oversharing in SharePoint and OneDrive, set sensitivity labels and DLP, then pilot Microsoft Copilot with the right users.", color: "from-[#8B5CF6] to-[#A78BFA]", to: "/solutions/sharepoint-security" },
+              { icon: Zap, title: "Business Process Automation", desc: "Power Automate and Power Apps for approvals, onboarding and reporting, so your team spends less time on manual work.", color: "from-[#FFD700] to-[#F0C800]", to: "/solutions/power-automate-workflows" },
+              { icon: CheckCircle, title: "Managed 365 Governance", desc: "Ongoing administration, access reviews, license optimization and configuration-drift monitoring with a quarterly roadmap.", color: "from-[#06B6D4] to-[#0891B2]", to: "/solutions/managed-365" },
+              { icon: Headphones, title: "Global Help Desk", desc: "Tier 1 and Tier 2 remote IT support for employees in any country, with clear SLAs and reporting.", color: "from-[#8B5CF6] to-[#A78BFA]", to: "/global-help-desk" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -281,7 +295,7 @@ const HomePage = () => {
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
               >
-                <div className="glass-card p-7 md:p-8 h-full group cursor-pointer">
+                <Link to={item.to} className="glass-card p-7 md:p-8 h-full group cursor-pointer block">
                   <motion.div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-lg`}
                     whileHover={{ scale: 1.15, rotate: 5 }}
@@ -291,12 +305,36 @@ const HomePage = () => {
                   </motion.div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground font-heading mb-3">{item.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-16 md:mt-24" />
+
+          {/* Industries */}
+          <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <span className="inline-block text-xs uppercase tracking-widest text-[#FFD700] font-semibold mb-3">Industries</span>
+            <h2 className="text-display-sm font-heading text-foreground mb-4">Built for regulated and service-heavy teams</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Organizations that run on Microsoft 365, handle sensitive client data, and need IT that works across offices and countries.</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { icon: Briefcase, name: "Professional services" },
+              { icon: Landmark, name: "Financial services & insurance" },
+              { icon: HeartPulse, name: "Healthcare & health services" },
+              { icon: Scale, name: "Legal firms" },
+              { icon: Calculator, name: "Accounting firms" },
+              { icon: Building2, name: "Property management" },
+              { icon: Store, name: "Multi-location service businesses" },
+              { icon: Cpu, name: "Technology & SaaS companies" },
+            ].map(({ icon: Icon, name }) => (
+              <div key={name} className="glass-card p-5 md:p-6 flex flex-col gap-3">
+                <Icon size={22} className="text-[#06B6D4]" aria-hidden="true" />
+                <h3 className="text-sm md:text-base font-bold text-foreground font-heading">{name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -305,7 +343,7 @@ const HomePage = () => {
 
       {/* ──── Pricing ──── */}
       <section className="relative py-20 md:py-28 overflow-hidden" id="pricing">
-        <div className="absolute inset-0 bg-[#050A14]/50 dark:bg-[#050A14]/50 backdrop-blur-sm opacity-0 dark:opacity-100 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-[#0C0E11]/50 dark:bg-[#0C0E11]/50 backdrop-blur-sm opacity-0 dark:opacity-100 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-white/60 backdrop-blur-sm dark:opacity-0 opacity-100 pointer-events-none z-0" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -348,7 +386,7 @@ const HomePage = () => {
 
       {/* ──── FAQ ──── */}
       <section className="relative py-20 md:py-28">
-        <div className="absolute inset-0 bg-[#0A1228]/50 dark:bg-[#0A1228]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
+        <div className="absolute inset-0 bg-[#121519]/50 dark:bg-[#121519]/50 backdrop-blur-sm opacity-0 dark:opacity-100" />
         <div className="absolute inset-0 bg-[#F1F5F9]/70 backdrop-blur-sm dark:opacity-0 opacity-100" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -402,13 +440,13 @@ const HomePage = () => {
         <div className="absolute inset-0 shimmer-overlay" />
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left relative z-10">
           <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#050A14] font-heading mb-2">Ready to modernize your IT?</h2>
-            <p className="text-[#050A14]/70 font-medium">Schedule your free support call today.</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0C0E11] font-heading mb-2">Ready to secure and simplify Microsoft 365?</h2>
+            <p className="text-[#0C0E11]/70 font-medium">Get a free 30-minute assessment and a roadmap for your environment.</p>
           </div>
           <MagneticButton strength={10}>
-            <Button asChild className="w-full md:w-auto bg-[#050A14] text-white hover:bg-[#0A1228] text-lg px-8 py-6 rounded-full shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 font-semibold" onClick={() => UHAnalytics.trackClick('book_demo', 'footer_cta')}>
+            <Button asChild className="w-full md:w-auto bg-[#0C0E11] text-white hover:bg-[#121519] text-lg px-8 py-6 rounded-full shadow-2xl shadow-black/30 transition-all duration-300 hover:-translate-y-1 font-semibold" onClick={() => UHAnalytics.trackClick('book_demo', 'footer_cta')}>
               <Link to="/book-demo">
-                Book Demo
+                Get Your IT Roadmap
               </Link>
             </Button>
           </MagneticButton>

@@ -174,11 +174,11 @@ const GuideTemplate = () => {
  </script>
  </Helmet>
 
- <a href="#main-content"className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#0A1228] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
+ <a href="#main-content"className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#121519] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
  Skip to main content
  </a>
 
- <div className="pt-24 pb-20 bg-gray-50 dark:bg-[#050A14] min-h-screen"id="main-content">
+ <div className="pt-24 pb-20 bg-gray-50 dark:bg-[#0C0E11] min-h-screen"id="main-content">
  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
  <Link 
  to="/resources"
@@ -189,7 +189,7 @@ const GuideTemplate = () => {
  </Link>
 
  <AnimatedContent type="fade">
- <article className="bg-white dark:bg-[#0A1228] rounded-2xl shadow-xl dark:shadow-black/30 overflow-hidden border border-gray-100">
+ <article className="bg-white dark:bg-[#121519] rounded-2xl shadow-xl dark:shadow-black/30 overflow-hidden border border-gray-100">
  <div className="bg-[#001F3F] text-white p-10 relative overflow-hidden">
  <div className="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4"aria-hidden="true">
  <FileText size={300} />

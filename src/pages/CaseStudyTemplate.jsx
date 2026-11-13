@@ -108,11 +108,11 @@ const CaseStudyTemplate = () => {
                 </script>
             </Helmet>
 
-            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#0A1228] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white dark:bg-[#121519] text-foreground p-4 rounded-md shadow-lg dark:shadow-black/20 font-bold">
                 Skip to main content
             </a>
 
-            <article className="pt-24 pb-20 bg-white dark:bg-[#050A14]" id="main-content">
+            <article className="pt-24 pb-20 bg-white dark:bg-[#0C0E11]" id="main-content">
                 {/* Header - Fixed colors */}
                 <header className="bg-[#001F3F] text-white py-20 mb-12">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,7 +135,7 @@ const CaseStudyTemplate = () => {
                                 <p className="text-lg text-muted-foreground leading-relaxed">{study.approach}</p>
                             </section>
 
-                            <section className="bg-gray-50 dark:bg-[#0A1228] p-8 rounded-xl border border-gray-100 dark:border-white/[0.08]" aria-label="Client Testimonial">
+                            <section className="bg-gray-50 dark:bg-[#121519] p-8 rounded-xl border border-gray-100 dark:border-white/[0.08]" aria-label="Client Testimonial">
                                 <div className="flex gap-4 mb-4" aria-hidden="true">
                                     {[1, 2, 3, 4, 5].map(i => <CheckCircle key={i} size={24} className="text-[#FFD700]" />)}
                                 </div>
@@ -147,7 +147,7 @@ const CaseStudyTemplate = () => {
                         </div>
 
                         <aside className="space-y-8">
-                            <div className="bg-gray-50 dark:bg-[#0A1228] p-6 rounded-lg border border-gray-200 dark:border-white/[0.08]">
+                            <div className="bg-gray-50 dark:bg-[#121519] p-6 rounded-lg border border-gray-200 dark:border-white/[0.08]">
                                 <h3 className="font-bold text-gray-800 dark:text-gray-100 mb-4 font-heading uppercase text-sm tracking-wider">Tech Stack</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {study.stack.map(tech => (

@@ -80,14 +80,14 @@ const PricingEngagePage = () => {
  </div>
  </section>
 
- <section className="py-12 md:py-20 bg-white dark:bg-[#0A1228]">
+ <section className="py-12 md:py-20 bg-white dark:bg-[#121519]">
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-12 text-center font-heading">Feature Comparison</h2>
  {/* Responsive table wrapper */}
  <div className="overflow-x-auto border rounded-lg shadow-sm">
  <table className="w-full border-collapse min-w-[600px]">
  <thead>
- <tr className="bg-gray-50 dark:bg-[#050A14]">
+ <tr className="bg-gray-50 dark:bg-[#0C0E11]">
  <th className="p-4 text-left font-bold text-foreground font-heading border-b-2 border-gray-200 dark:border-white/[0.06]">Feature</th>
  <th className="p-4 text-center font-bold text-foreground font-heading border-b-2 border-gray-200 dark:border-white/[0.06]">Startups</th>
  <th className="p-4 text-center font-bold text-foreground font-heading border-b-2 border-gray-200 dark:border-white/[0.06]">SMB</th>
@@ -109,24 +109,24 @@ const PricingEngagePage = () => {
  </div>
  </section>
 
- <section className="py-12 md:py-20 bg-gray-50 dark:bg-[#050A14]">
+ <section className="py-12 md:py-20 bg-gray-50 dark:bg-[#0C0E11]">
  <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-16">
  <div>
  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 font-heading">Frequently Asked Questions</h2>
  <div className="space-y-4">
- <details className="bg-white dark:bg-[#0A1228] p-6 rounded-lg shadow-sm group">
+ <details className="bg-white dark:bg-[#121519] p-6 rounded-lg shadow-sm group">
  <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none">
  Can I switch plans later? <ChevronDown className="group-open:rotate-180 transition-transform"/>
  </summary>
  <p className="mt-4 text-muted-foreground">Yes, you can upgrade or downgrade your plan at any time. Changes take effect in the next billing cycle.</p>
  </details>
- <details className="bg-white dark:bg-[#0A1228] p-6 rounded-lg shadow-sm group">
+ <details className="bg-white dark:bg-[#121519] p-6 rounded-lg shadow-sm group">
  <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none">
  Do you offer custom consulting? <ChevronDown className="group-open:rotate-180 transition-transform"/>
  </summary>
  <p className="mt-4 text-muted-foreground">Absolutely. Our Enterprise plan is fully customizable, and we also offer project-based consulting rates.</p>
  </details>
- <details className="bg-white dark:bg-[#0A1228] p-6 rounded-lg shadow-sm group">
+ <details className="bg-white dark:bg-[#121519] p-6 rounded-lg shadow-sm group">
  <summary className="font-bold text-foreground cursor-pointer flex justify-between items-center font-heading list-none">
  What is your cancellation policy? <ChevronDown className="group-open:rotate-180 transition-transform"/>
  </summary>
@@ -135,7 +135,7 @@ const PricingEngagePage = () => {
  </div>
  </div>
 
- <div className="bg-white dark:bg-[#0A1228] p-6 md:p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
+ <div className="bg-white dark:bg-[#121519] p-6 md:p-8 rounded-xl shadow-lg dark:shadow-black/20 border border-gray-100">
  <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 font-heading">Start Your Engagement</h2>
  <form onSubmit={handleSubmit} className="space-y-4">
  <div className="grid md:grid-cols-2 gap-4">
@@ -156,7 +156,7 @@ const PricingEngagePage = () => {
  </div>
  <div>
  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Region</label>
- <select name="region"value={formData.region} onChange={handleInputChange} className="w-full p-3 border rounded-lg bg-white dark:bg-[#0A1228] text-base">
+ <select name="region"value={formData.region} onChange={handleInputChange} className="w-full p-3 border rounded-lg bg-white dark:bg-[#121519] text-base">
  <option>North America</option>
  <option>Europe</option>
  <option>Asia Pacific</option>
@@ -167,7 +167,7 @@ const PricingEngagePage = () => {
 
  <div>
  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Interested Plan</label>
- <select name="plan"value={formData.plan} onChange={handleInputChange} className="w-full p-3 border rounded-lg bg-white dark:bg-[#0A1228] text-base">
+ <select name="plan"value={formData.plan} onChange={handleInputChange} className="w-full p-3 border rounded-lg bg-white dark:bg-[#121519] text-base">
  <option value="">Select a plan...</option>
  <option value="Free Consulting">Free Consulting</option>
  <option value="Individuals">Individuals</option>

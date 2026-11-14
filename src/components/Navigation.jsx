@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon, LifeBuoy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -54,17 +54,22 @@ const Navigation = () => {
         { name: 'Secure 365', path: '/solutions/secure-365' },
         { name: 'Copilot Readiness', path: '/solutions/sharepoint-security' },
         { name: 'Automation', path: '/solutions/power-automate-workflows' },
+        { name: 'Global Help Desk', path: '/global-help-desk' },
         { name: 'Managed 365', path: '/solutions/managed-365' },
         { name: 'Zero Trust', path: '/solutions/zero-trust-security' },
         { name: 'Cloud & DevOps', path: '/solutions/cloud-devops' }
       ]
     },
-    { name: 'Help Desk', path: '/global-help-desk' },
-    { name: 'Method', path: '/method' },
-    { name: 'Outcomes', path: '/outcomes' },
-    { name: 'Resources', path: '/resources' },
+    { name: 'Approach', path: '/approach' },
     { name: 'Trust', path: '/trust-center' },
-    { name: 'About', path: '/about' },
+    {
+      name: 'About',
+      path: '/about',
+      children: [
+        { name: 'About Us', path: '/about' },
+        { name: 'Client Outcomes', path: '/outcomes' }
+      ]
+    },
   ];
 
   const isHomePage = location.pathname === '/';
@@ -171,6 +176,12 @@ const Navigation = () => {
               </Button>
             </Link>
 
+            <Link to="/global-help-desk#submit-ticket" onClick={() => UHAnalytics.trackClick('get_support', 'navigation')}>
+              <Button variant="outline" className="whitespace-nowrap text-sm font-semibold px-4 gap-2 rounded-full bg-transparent border-[#06B6D4]/60 text-[#06B6D4] hover:bg-[#06B6D4]/10 hover:text-[#06B6D4]">
+                <LifeBuoy size={16} aria-hidden="true" /> Get Support
+              </Button>
+            </Link>
+
             <Link to="/book-demo">
               <Button className="btn-premium text-sm font-semibold px-6">
                 <span className="whitespace-nowrap">Book Demo</span>
@@ -247,6 +258,9 @@ const Navigation = () => {
                 </div>
               ))}
               <div className="h-px bg-[#001F3F]/10 dark:bg-white/[0.06] my-4" />
+              <Link to="/global-help-desk#submit-ticket" onClick={() => setIsOpen(false)}>
+                <Button variant="outline" className="w-full text-lg py-6 justify-center gap-2 border-[#06B6D4]/60 text-[#06B6D4]"><LifeBuoy size={18} aria-hidden="true" /> Get Support</Button>
+              </Link>
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button variant="ghost" className="w-full text-[#001F3F]/80 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 justify-start text-lg px-3 font-medium">Contact</Button>
               </Link>

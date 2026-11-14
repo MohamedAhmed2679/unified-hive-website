@@ -128,7 +128,7 @@ export const websiteContent = {
         activities: ["Performance monitoring", "Cost optimization (FinOps)", "Security governance", "Knowledge transfer & training", "Continuous improvement cycles"]
       }
     ],
-    page: "/method"
+    page: "/approach"
   },
   outcomes: {
     title: "Tangible Results You Can Expect",

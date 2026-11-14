@@ -122,9 +122,9 @@ const AboutPage = () => {
  return (
  <>
  <Helmet>
- <title>About Unified Hive | Enterprise IT Consultants & Zero Trust Architects</title>
- <meta name="description" content="Discover Unified Hive's mission, our expert team of Cloud Architects, and our proven track record of engineering measurable IT outcomes for SMBs and Enterprises."/>
- <meta property="og:title" content="About Unified Hive | Enterprise IT Consultants & Zero Trust Architects"/>
+ <title>About Unified Hive | Microsoft 365, Security & Managed IT Partner</title>
+ <meta name="description" content="Unified Hive is a remote-first technology partner that helps growing organizations worldwide secure, automate and manage Microsoft 365, with a global help desk for their people."/>
+ <meta property="og:title" content="About Unified Hive | Microsoft 365, Security & Managed IT Partner"/>
  <meta property="og:description" content="Learn about Unified Hive's mission and team of IT experts."/>
  <meta property="og:image" content="https://horizons-cdn.hostinger.com/3d5f6b13-c880-47b3-8cfb-48f3d18da893/65a7b1a51649e52a56ad0d3c553b286e.png"/>
  <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
@@ -139,10 +139,10 @@ const AboutPage = () => {
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <AnimatedContent type="text"className="text-center">
  <h1 className="text-4xl md:text-5xl font-bold mb-6 font-heading">
- About Unifiedhive
+ About Unified Hive
  </h1>
  <p className="text-xl text-gray-200 max-w-3xl mx-auto">
- Empowering organizations to innovate responsibly and deliver measurable business outcomes through expert IT consulting
+ A remote-first technology partner that helps growing organizations secure, automate and manage Microsoft 365, and supports their people wherever they work
  </p>
  </AnimatedContent>
  </div>
@@ -161,7 +161,7 @@ const AboutPage = () => {
  Our Mission
  </h2>
  <p className="text-xl text-muted-foreground leading-relaxed">
- To help organizations <span className="font-semibold text-foreground text-[#06B6D4]">innovate responsibly</span> by delivering technology solutions that drive <span className="font-semibold text-foreground text-[#06B6D4]">measurable business outcomes</span>. We believe in transparency, collaboration, and empowering our clients with the knowledge and tools to sustain success long after our engagement ends.
+ To give growing organizations <span className="font-semibold text-[#06B6D4]">enterprise-grade IT</span> without enterprise-sized overhead: a secure, well-governed Microsoft 365 environment, automated busywork, and <span className="font-semibold text-[#06B6D4]">reliable support for every employee</span>, in every time zone. We believe in transparency, collaboration, and empowering our clients with the knowledge and tools to sustain success long after our engagement ends.
  </p>
  </AnimatedContent>
  </div>

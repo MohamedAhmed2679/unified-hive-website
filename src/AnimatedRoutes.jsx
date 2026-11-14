@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 
@@ -24,6 +24,7 @@ const TrustCenterPage = lazy(() => import('@/pages/TrustCenterPage'));
 const CaseStudyTemplate = lazy(() => import('@/pages/CaseStudyTemplate'));
 const PricingEngagePage = lazy(() => import('@/pages/PricingEngagePage'));
 const OutcomesPage = lazy(() => import('@/pages/OutcomesPage'));
+const ApproachPage = lazy(() => import('@/pages/ApproachPage'));
 const GlobalHelpDeskPage = lazy(() => import('@/pages/GlobalHelpDeskPage'));
 
 const AnimatedRoutes = () => {
@@ -43,14 +44,15 @@ const AnimatedRoutes = () => {
           <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
           <Route path="/solutions/:slug" element={<PageTransition><SolutionTemplate /></PageTransition>} />
 
-          <Route path="/method" element={<PageTransition><MethodPage /></PageTransition>} />
+          <Route path="/approach" element={<PageTransition><ApproachPage /></PageTransition>} />
+          <Route path="/method" element={<Navigate to="/approach" replace />} />
           <Route path="/outcomes" element={<PageTransition><OutcomesPage /></PageTransition>} />
           
           {/* Pricing Routes */}
           <Route path="/pricing-engage" element={<PageTransition><PricingEngagePage /></PageTransition>} />
 
           {/* Resource Routes */}
-          <Route path="/resources" element={<PageTransition><ResourcesPage /></PageTransition>} />
+          <Route path="/resources" element={<Navigate to="/approach#resources" replace />} />
           <Route path="/resources/:slug" element={<PageTransition><GuideTemplate /></PageTransition>} />
           
           <Route path="/global-help-desk" element={<PageTransition><GlobalHelpDeskPage /></PageTransition>} />

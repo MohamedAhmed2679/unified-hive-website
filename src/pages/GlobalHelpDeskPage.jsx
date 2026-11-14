@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import AnimatedContent from '@/components/AnimatedContent';
@@ -80,7 +81,14 @@ const Card = ({ children, className = '' }) => (
   <div className={`p-7 rounded-2xl bg-white dark:bg-white/[0.03] border border-[#001F3F]/[0.08] dark:border-[#06B6D4]/[0.12] ${className}`}>{children}</div>
 );
 
-const GlobalHelpDeskPage = () => (
+const GlobalHelpDeskPage = () => {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const t = setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 350);
+    return () => clearTimeout(t);
+  }, [hash]);
+  return (
   <>
     <Helmet>
       <title>Global Remote IT Help Desk | Unified Hive</title>
@@ -237,6 +245,7 @@ const GlobalHelpDeskPage = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default GlobalHelpDeskPage;

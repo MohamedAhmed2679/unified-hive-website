@@ -91,7 +91,7 @@ const GuideTemplate = () => {
  const guide = guides[slug];
 
  if (!guide) {
- return <Navigate to="/resources"/>;
+ return <Navigate to="/approach"/>;
  }
 
  const structuredData = {
@@ -181,7 +181,7 @@ const GuideTemplate = () => {
  <div className="pt-24 pb-20 bg-gray-50 dark:bg-[#0C0E11] min-h-screen"id="main-content">
  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
  <Link 
- to="/resources"
+ to="/approach"
  className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-foreground mb-8 transition-colors focus-visible:ring-2 focus-visible:ring-[#FFD700] rounded px-2 py-1"
  aria-label="Back to Resources"
  >

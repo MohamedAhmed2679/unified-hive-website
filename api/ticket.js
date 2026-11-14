@@ -55,11 +55,11 @@ export default async function handler(req, res) {
     const data = await r.json().catch(() => ({}));
     if (!r.ok || String(data.success) === 'false') {
       console.error('Ticket relay failed', r.status, JSON.stringify(data).slice(0, 300));
-      return res.status(502).json({ error: 'upstream', ref });
+      return res.status(502).json({ error: 'upstream', ref, detail: String(data.message || r.status).slice(0, 200) });
     }
     return res.status(200).json({ ok: true, ref });
   } catch (e) {
     console.error('Ticket relay error', e?.name || e);
-    return res.status(502).json({ error: 'upstream', ref });
+    return res.status(502).json({ error: 'upstream', ref, detail: String(e?.message || e).slice(0, 200) });
   }
 }

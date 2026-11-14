@@ -119,7 +119,7 @@ const MagicShareMenu = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.96 }}
                         transition={{ duration: 0.18 }}
-                        className="absolute bottom-16 left-0 p-3 rounded-2xl bg-white dark:bg-[#121519] border border-black/10 dark:border-white/10 shadow-2xl"
+                        className="absolute bottom-16 left-0 w-[264px] p-3 rounded-2xl bg-white dark:bg-[#121519] border border-black/10 dark:border-white/10 shadow-2xl"
                         role="menu"
                     >
                         <p className="px-1 pb-2 text-xs font-semibold text-gray-500 dark:text-white/60">Follow Unified Hive</p>

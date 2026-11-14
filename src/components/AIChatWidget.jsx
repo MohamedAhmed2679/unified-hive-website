@@ -15,7 +15,7 @@ const AIChatWidget = () => {
     const [messages, setMessages] = useState([
         {
             role: 'assistant',
-            content: "Hello! 👋 I'm the Unifiedhive AI. I've been trained on our entire service catalog and methodology. Ask me about **DevOps**, **Zero Trust Security**, **Pricing**, or how we can help optimize your IT costs.",
+            content: "Hi, I'm **Unified Hive Bot**, an AI assistant. Ask me about our Microsoft 365, security, automation and help desk services, or describe a technical problem and I'll help you narrow it down. I'll never ask for your password or MFA codes.",
         }
     ]);
     const [inputText, setInputText] = useState('');
@@ -74,14 +74,30 @@ const AIChatWidget = () => {
         }
 
         try {
-            // Simulated AI processing time for natural interaction
-            await new Promise(resolve => setTimeout(resolve, 600 + Math.random() * 800));
+            let finalResponseText = '';
+            try {
+                const history = [...messages, userMsg].slice(-12).map(m => ({ role: m.role, content: m.content }));
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: history }),
+                });
+                if (res.status === 429) {
+                    finalResponseText = "I'm getting a lot of questions right now. Please try again in a minute, or email Info@unifiedhive.com.";
+                } else if (res.ok) {
+                    finalResponseText = (await res.json()).reply || '';
+                }
+            } catch (netErr) {
+                console.warn('Bot backend unreachable, using offline answers', netErr);
+            }
 
-            const match = processUserMessage(userMsg.content);
-            let finalResponseText = match.text;
-
-            if (match.relatedLink) {
-                finalResponseText += `\n\n[${match.linkText}](${match.relatedLink})`;
+            // Offline fallback: keyword answers from the site's own content
+            if (!finalResponseText) {
+                const match = processUserMessage(userMsg.content);
+                finalResponseText = match.text;
+                if (match.relatedLink) {
+                    finalResponseText += `\n\n[${match.linkText}](${match.relatedLink})`;
+                }
             }
 
             setMessages(prev => [...prev, {
@@ -157,7 +173,7 @@ const AIChatWidget = () => {
                 onClick={toggleChat}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={isOpen ? "Close Chat" : "Open AI Assistant"}
+                aria-label={isOpen ? "Close Chat" : "Open Unified Hive Bot"}
             >
                 {isOpen ? <X size={24} /> : <div className="relative"><Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-[#FFD700]" /><Bot size={28} /></div>}
             </motion.button>
@@ -182,7 +198,7 @@ const AIChatWidget = () => {
                                     <Bot size={20} className="text-[#FFD700]" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold font-heading text-base">Unifiedhive AI</h3>
+                                    <h3 className="font-bold font-heading text-base">Unified Hive Bot</h3>
                                     <div className="flex items-center gap-1.5">
                                         <span className="relative flex h-2 w-2">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>

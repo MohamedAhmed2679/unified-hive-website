@@ -41,7 +41,7 @@ const socialLinks = [
   { name: "TikTok", icon: TikTokIcon, url: "https://www.tiktok.com/@unifiedhive" },
   { name: "YouTube", icon: YouTubeIcon, url: "https://www.youtube.com/channel/UCuOzD6hbJpcaRqgswo37CzA" },
   { name: "GitHub", icon: GitHubIcon, url: "https://github.com/Unifiedhive" },
-  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/user/unifiedhive" },
+  { name: "Reddit", icon: RedditIcon, url: "https://www.reddit.com/u/unifiedhive" },
 ];
 
 const Footer = () => {

@@ -24,6 +24,7 @@ const TrustCenterPage = lazy(() => import('@/pages/TrustCenterPage'));
 const CaseStudyTemplate = lazy(() => import('@/pages/CaseStudyTemplate'));
 const PricingEngagePage = lazy(() => import('@/pages/PricingEngagePage'));
 const OutcomesPage = lazy(() => import('@/pages/OutcomesPage'));
+const GlobalHelpDeskPage = lazy(() => import('@/pages/GlobalHelpDeskPage'));
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -52,6 +53,7 @@ const AnimatedRoutes = () => {
           <Route path="/resources" element={<PageTransition><ResourcesPage /></PageTransition>} />
           <Route path="/resources/:slug" element={<PageTransition><GuideTemplate /></PageTransition>} />
           
+          <Route path="/global-help-desk" element={<PageTransition><GlobalHelpDeskPage /></PageTransition>} />
           <Route path="/trust-center" element={<PageTransition><TrustCenterPage /></PageTransition>} />
           <Route path="/case-studies/:slug" element={<PageTransition><CaseStudyTemplate /></PageTransition>} />
 

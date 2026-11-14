@@ -19,6 +19,7 @@ const PORT = 4173;
 // All public routes to pre-render
 const ROUTES = [
   '/',
+  '/global-help-desk',
   '/solutions',
   '/about',
   '/contact',

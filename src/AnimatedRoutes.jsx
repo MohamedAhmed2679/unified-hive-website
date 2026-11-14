@@ -24,6 +24,7 @@ const TrustCenterPage = lazy(() => import('@/pages/TrustCenterPage'));
 const CaseStudyTemplate = lazy(() => import('@/pages/CaseStudyTemplate'));
 const PricingEngagePage = lazy(() => import('@/pages/PricingEngagePage'));
 const OutcomesPage = lazy(() => import('@/pages/OutcomesPage'));
+const SupportPage = lazy(() => import('@/pages/SupportPage'));
 const ApproachPage = lazy(() => import('@/pages/ApproachPage'));
 const GlobalHelpDeskPage = lazy(() => import('@/pages/GlobalHelpDeskPage'));
 
@@ -44,6 +45,7 @@ const AnimatedRoutes = () => {
           <Route path="/solutions" element={<PageTransition><SolutionsPage /></PageTransition>} />
           <Route path="/solutions/:slug" element={<PageTransition><SolutionTemplate /></PageTransition>} />
 
+          <Route path="/support" element={<PageTransition><SupportPage /></PageTransition>} />
           <Route path="/approach" element={<PageTransition><ApproachPage /></PageTransition>} />
           <Route path="/method" element={<Navigate to="/approach" replace />} />
           <Route path="/outcomes" element={<PageTransition><OutcomesPage /></PageTransition>} />

@@ -110,7 +110,7 @@ const Footer = () => {
                 { name: "About", path: "/about" },
                 { name: "Blog", path: "/blog" },
                 { name: "Contact", path: "/contact" },
-                { name: "Submit a Ticket", path: "/global-help-desk#submit-ticket" },
+                { name: "Get Support", path: "/support" },
                 { name: "Global Help Desk", path: "/global-help-desk" },
                 { name: "Book a Demo", path: "/book-demo" }
               ].map(link => (

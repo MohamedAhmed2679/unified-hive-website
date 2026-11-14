@@ -25,6 +25,7 @@ const ROUTES = [
   '/contact',
   '/book-demo',
   '/approach',
+  '/support',
   '/outcomes',
   '/blog',
   '/trust-center',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Sun, Moon, LifeBuoy } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon, LifeBuoy, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -170,23 +170,32 @@ const Navigation = () => {
               </AnimatePresence>
             </button>
 
-            <Link to="/contact" className="tap-target">
-              <Button variant="ghost" className="text-sm text-[#001F3F]/70 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.04] font-medium">
-                Contact
-              </Button>
-            </Link>
-
-            <Link to="/global-help-desk#submit-ticket" onClick={() => UHAnalytics.trackClick('get_support', 'navigation')}>
-              <Button variant="outline" className="whitespace-nowrap text-sm font-semibold px-4 gap-2 rounded-full bg-transparent border-[#06B6D4]/60 text-[#06B6D4] hover:bg-[#06B6D4]/10 hover:text-[#06B6D4]">
-                <LifeBuoy size={16} aria-hidden="true" /> Get Support
-              </Button>
-            </Link>
-
-            <Link to="/book-demo">
-              <Button className="btn-premium text-sm font-semibold px-6">
-                <span className="whitespace-nowrap">Book Demo</span>
-              </Button>
-            </Link>
+            {/* Action cluster: secondary pair in one segmented control, primary CTA beside it */}
+            <div className="flex items-center gap-2 pl-2 ml-1 border-l border-black/[0.08] dark:border-white/[0.08]">
+              <div className="flex items-center h-10 p-1 rounded-full border border-black/[0.08] dark:border-white/[0.1] bg-black/[0.02] dark:bg-white/[0.03]">
+                <Link
+                  to="/contact"
+                  className={`flex items-center gap-1.5 h-8 px-3.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${location.pathname === '/contact' ? 'bg-black/[0.06] dark:bg-white/[0.08] text-[#001F3F] dark:text-white' : 'text-[#001F3F]/70 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white'}`}
+                  onClick={() => UHAnalytics.trackClick('contact', 'navigation')}
+                >
+                  <Mail size={15} aria-hidden="true" /> Contact
+                </Link>
+                <Link
+                  to="/support"
+                  className={`flex items-center gap-1.5 h-8 px-3.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${location.pathname === '/support' ? 'bg-[#06B6D4]/15 text-[#06B6D4]' : 'text-[#001F3F]/70 dark:text-white/70 hover:text-[#06B6D4]'}`}
+                  onClick={() => UHAnalytics.trackClick('get_support', 'navigation')}
+                >
+                  <LifeBuoy size={15} aria-hidden="true" /> Support
+                </Link>
+              </div>
+              <Link
+                to="/book-demo"
+                className="group flex items-center gap-2 h-10 pl-5 pr-4 rounded-full bg-gradient-to-r from-[#FFD700] to-[#F0C800] text-[#050A14] text-sm font-semibold whitespace-nowrap shadow-[0_4px_20px_rgba(255,215,0,0.25)] hover:shadow-[0_6px_24px_rgba(255,215,0,0.4)] transition-shadow"
+                onClick={() => UHAnalytics.trackClick('book_demo', 'navigation')}
+              >
+                Book Demo <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
 
           {/* Mobile */}
@@ -258,7 +267,7 @@ const Navigation = () => {
                 </div>
               ))}
               <div className="h-px bg-[#001F3F]/10 dark:bg-white/[0.06] my-4" />
-              <Link to="/global-help-desk#submit-ticket" onClick={() => setIsOpen(false)}>
+              <Link to="/support" onClick={() => setIsOpen(false)}>
                 <Button variant="outline" className="w-full text-lg py-6 justify-center gap-2 border-[#06B6D4]/60 text-[#06B6D4]"><LifeBuoy size={18} aria-hidden="true" /> Get Support</Button>
               </Link>
               <Link to="/contact" onClick={() => setIsOpen(false)}>

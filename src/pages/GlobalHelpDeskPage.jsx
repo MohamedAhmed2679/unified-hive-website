@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import AnimatedContent from '@/components/AnimatedContent';
 import { Button } from '@/components/ui/button';
-import SupportTicketForm from '@/components/SupportTicketForm';
 import {
   ArrowRight, Headphones, Bot, Users, Wrench, ShieldAlert, BookOpen, CheckCircle2,
   Mail, MessageSquare, Phone, Globe, LayoutGrid, KeyRound, Laptop, Wifi, UserPlus,
@@ -118,7 +117,7 @@ const GlobalHelpDeskPage = () => {
             <Link to="/book-demo">Request an IT support assessment <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
           <Button asChild variant="outline" className="bg-transparent border border-white/[0.1] text-foreground text-base px-8 py-6 rounded-full">
-            <a href="#submit-ticket">Submit a ticket</a>
+            <Link to="/support">Get support</Link>
           </Button>
         </div>
       </div>
@@ -220,7 +219,7 @@ const GlobalHelpDeskPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground font-heading">Submit a ticket</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">Tell us what's wrong and it goes straight to support@unifiedhive.com. For an outage or a security incident, choose Urgent.</p>
         </AnimatedContent>
-        <SupportTicketForm />
+        <div className="text-center"><Button asChild className="btn-premium px-8 py-6"><Link to="/support#ticket">Open the support form</Link></Button></div>
       </div>
     </section>
 

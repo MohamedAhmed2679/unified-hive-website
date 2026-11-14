@@ -9,7 +9,7 @@ const PRIORITIES = ['Low', 'Normal', 'High', 'Urgent'];
 
 const empty = { name: '', email: '', company: '', category: 'Microsoft 365', priority: 'Normal', affected: '', started: '', subject: '', description: '', website: '' };
 
-const field = 'w-full h-11 px-3 rounded-lg bg-white dark:bg-[#0C0E11] border border-[#001F3F]/15 dark:border-white/10 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#06B6D4]';
+const field = 'w-full min-w-0 h-11 px-3 rounded-lg bg-white dark:bg-[#0C0E11] border border-[#001F3F]/15 dark:border-white/10 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#06B6D4]';
 const label = 'block text-sm font-medium text-foreground mb-1.5';
 
 const SupportTicketForm = () => {
@@ -46,7 +46,7 @@ const SupportTicketForm = () => {
       <div><label htmlFor="t-name" className={label}>Your name</label><input id="t-name" required className={field} value={f.name} onChange={set('name')} autoComplete="name" /></div>
       <div><label htmlFor="t-email" className={label}>Work email</label><input id="t-email" type="email" required className={field} value={f.email} onChange={set('email')} autoComplete="email" /></div>
       <div><label htmlFor="t-company" className={label}>Company <span className="text-muted-foreground font-normal">(optional)</span></label><input id="t-company" className={field} value={f.company} onChange={set('company')} autoComplete="organization" /></div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-[3fr_2fr] gap-3">
         <div><label htmlFor="t-category" className={label}>Category</label><select id="t-category" className={field} value={f.category} onChange={set('category')}>{CATEGORIES.map((c) => <option key={c}>{c}</option>)}</select></div>
         <div><label htmlFor="t-priority" className={label}>Priority</label><select id="t-priority" className={field} value={f.priority} onChange={set('priority')}>{PRIORITIES.map((c) => <option key={c}>{c}</option>)}</select></div>
       </div>

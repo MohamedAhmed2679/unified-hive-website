@@ -8,7 +8,7 @@ const openBot = () => document.querySelector('button[aria-label="Open Unified Hi
 
 const channels = [
   { icon: FileText, title: 'Submit a ticket', text: 'Best for most issues. You get a reference number and we reply by email.', action: { label: 'Open the form', href: '#ticket' } },
-  { icon: Mail, title: 'Email support', text: 'Send screenshots or details to our support inbox.', action: { label: 'support@unifiedhive.com', href: 'mailto:support@unifiedhive.com' } },
+  { icon: Mail, title: 'Email support', text: 'Send screenshots or details to support@unifiedhive.com.', action: { label: 'Send an email', href: 'mailto:support@unifiedhive.com' } },
   { icon: Phone, title: 'Call us', text: 'For urgent problems that stop people working.', action: { label: '+1 332 220 0017', href: 'tel:+13322200017' } },
   { icon: Bot, title: 'Ask Unified Hive Bot', text: 'Instant answers and step-by-step troubleshooting, any time.', action: { label: 'Start a chat', onClick: openBot } },
 ];

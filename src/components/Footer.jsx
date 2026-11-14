@@ -110,6 +110,7 @@ const Footer = () => {
                 { name: "About", path: "/about" },
                 { name: "Blog", path: "/blog" },
                 { name: "Contact", path: "/contact" },
+                { name: "Submit a Ticket", path: "/global-help-desk#submit-ticket" },
                 { name: "Global Help Desk", path: "/global-help-desk" },
                 { name: "Book a Demo", path: "/book-demo" }
               ].map(link => (
@@ -134,6 +135,12 @@ const Footer = () => {
                 <a href="mailto:Info@unifiedhive.com" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
                   <Mail size={16} className="mt-0.5 text-[#06B6D4] flex-shrink-0" />
                   <span className="text-gray-400 break-all">Info@unifiedhive.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:support@unifiedhive.com" className="flex items-start gap-3 hover:text-[#FFD700] transition-colors">
+                  <Mail size={16} className="mt-0.5 text-[#FFD700] flex-shrink-0" />
+                  <span className="text-gray-400 break-all">Support@unifiedhive.com</span>
                 </a>
               </li>
               <li className="flex items-start gap-3">

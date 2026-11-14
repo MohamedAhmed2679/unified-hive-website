@@ -167,15 +167,15 @@ const AIChatWidget = () => {
             {/* Toggle Button */}
             <motion.button
                 className={cn(
-                    "fixed bottom-4 left-4 z-[999] p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 border-2 border-white",
-                    isOpen ? "bg-red-500 hover:bg-red-600 text-white" : "bg-gradient-to-r from-[#001F3F] to-[#003366] text-white hover:scale-105"
+                    "fixed bottom-4 left-4 z-[999] p-3 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 border-2 border-[#FFD700]/70 shadow-[#FFD700]/20",
+                    isOpen ? "bg-red-500 hover:bg-red-600 text-white" : "bg-[#121519] text-white hover:scale-105"
                 )}
                 onClick={toggleChat}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label={isOpen ? "Close Chat" : "Open Unified Hive Bot"}
             >
-                {isOpen ? <X size={24} /> : <div className="relative"><Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-[#FFD700]" /><Bot size={28} /></div>}
+                {isOpen ? <X size={24} /> : <span className="relative block w-9 h-9"><img src="https://horizons-cdn.hostinger.com/3d5f6b13-c880-47b3-8cfb-48f3d18da893/65a7b1a51649e52a56ad0d3c553b286e.png" alt="" className="w-9 h-9 object-contain" width="36" height="36" /><span className="absolute -bottom-1 -right-1 grid place-items-center w-4 h-4 rounded-full bg-[#06B6D4] ring-2 ring-[#121519]"><Bot className="w-2.5 h-2.5 text-white" /></span></span>}
             </motion.button>
 
             {/* Chat Window */}

@@ -121,9 +121,9 @@ const BookDemoPage = () => {
  
  <div className="mt-8 text-center">
  <p className="text-gray-600 dark:text-gray-400 mb-3">Having trouble with the calendar?</p>
- <a href="mailto:info@unifiedhive.com"className="inline-block">
+ <a href="mailto:support@unifiedhive.com"className="inline-block">
  <Button variant="outline"className="text-foreground border-[#001F3F] hover:bg-[#001F3F] hover:text-white transition-all px-6 py-5 h-auto text-base gap-2">
- Email Sohila Directly <ExternalLink className="w-4 h-4"/>
+ Email Support Directly <ExternalLink className="w-4 h-4"/>
  </Button>
  </a>
  </div>

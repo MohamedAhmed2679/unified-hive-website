@@ -112,7 +112,7 @@ const Navigation = () => {
             {navLinks.map((link) => (
               link.children ? (
                 <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#001F3F]/70 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white transition-colors duration-300 focus:outline-none tap-target">
+                  <DropdownMenuTrigger className="whitespace-nowrap flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#001F3F]/70 dark:text-white/70 hover:text-[#001F3F] dark:hover:text-white transition-colors duration-300 focus:outline-none tap-target">
                     {link.name} <ChevronDown size={14} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-[#121519]/95 backdrop-blur-xl border border-white/[0.06] p-2 min-w-[200px] z-[60] shadow-2xl shadow-black/40">
@@ -136,7 +136,7 @@ const Navigation = () => {
                   className="relative group px-3 py-2 tap-target"
                   onClick={() => UHAnalytics.trackClick(link.name, 'navigation')}
                 >
-                  <span className="text-sm font-medium text-[#001F3F]/70 dark:text-white/70 group-hover:text-[#001F3F] dark:group-hover:text-white transition-colors duration-300">
+                  <span className="whitespace-nowrap text-sm font-medium text-[#001F3F]/70 dark:text-white/70 group-hover:text-[#001F3F] dark:group-hover:text-white transition-colors duration-300">
                     {link.name}
                   </span>
                   <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#06B6D4] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
@@ -173,7 +173,7 @@ const Navigation = () => {
 
             <Link to="/book-demo">
               <Button className="btn-premium text-sm font-semibold px-6">
-                Book Demo
+                <span className="whitespace-nowrap">Book Demo</span>
               </Button>
             </Link>
           </div>

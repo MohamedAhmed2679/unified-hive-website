@@ -4,6 +4,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import chat from './api/chat.js';
+import ticket from './api/ticket.js';
 
 const DIST = join(fileURLToPath(new URL('.', import.meta.url)), 'dist');
 const PORT = process.env.PORT || 3000;
@@ -38,9 +39,10 @@ async function sendFile(res, file, status = 200) {
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
-    if (url.pathname === '/api/chat') {
+    const api = { '/api/chat': chat, '/api/ticket': ticket }[url.pathname];
+    if (api) {
       if (req.method === 'POST') req.body = await readBody(req);
-      return await chat(req, wrap(res));
+      return await api(req, wrap(res));
     }
     const safe = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, '');
     for (const candidate of [join(DIST, safe), join(DIST, safe, 'index.html')]) {

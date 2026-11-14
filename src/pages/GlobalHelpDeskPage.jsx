@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import AnimatedContent from '@/components/AnimatedContent';
 import { Button } from '@/components/ui/button';
+import SupportTicketForm from '@/components/SupportTicketForm';
 import {
   ArrowRight, Headphones, Bot, Users, Wrench, ShieldAlert, BookOpen, CheckCircle2,
   Mail, MessageSquare, Phone, Globe, LayoutGrid, KeyRound, Laptop, Wifi, UserPlus,
@@ -109,7 +110,7 @@ const GlobalHelpDeskPage = () => (
             <Link to="/book-demo">Request an IT support assessment <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
           <Button asChild variant="outline" className="bg-transparent border border-white/[0.1] text-foreground text-base px-8 py-6 rounded-full">
-            <a href="#how-it-works">See how a request moves</a>
+            <a href="#submit-ticket">Submit a ticket</a>
           </Button>
         </div>
       </div>
@@ -203,6 +204,17 @@ const GlobalHelpDeskPage = () => (
         <Button asChild className="btn-premium px-8 py-6"><Link to="/book-demo">Find your IT cost-saving opportunities</Link></Button>
       </div>
     </Section>
+
+    <section id="submit-ticket" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <div className="max-w-4xl mx-auto">
+        <AnimatedContent type="text" className="text-center mb-10">
+          <span className="inline-block text-xs uppercase tracking-widest text-[#06B6D4] font-semibold mb-3">Support</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground font-heading">Submit a ticket</h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">Tell us what's wrong and it goes straight to support@unifiedhive.com. For an outage or a security incident, choose Urgent.</p>
+        </AnimatedContent>
+        <SupportTicketForm />
+      </div>
+    </section>
 
     <Section title="Frequently asked questions" band>
       <div className="max-w-3xl mx-auto space-y-3">

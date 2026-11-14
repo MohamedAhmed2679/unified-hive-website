@@ -110,6 +110,7 @@ const Footer = () => {
                 { name: "About", path: "/about" },
                 { name: "Blog", path: "/blog" },
                 { name: "Contact", path: "/contact" },
+                { name: "Our Products", path: "/products" },
                 { name: "Get Support", path: "/support" },
                 { name: "Global Help Desk", path: "/global-help-desk" },
                 { name: "Book a Demo", path: "/book-demo" }

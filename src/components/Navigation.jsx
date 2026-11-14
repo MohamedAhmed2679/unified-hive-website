@@ -67,7 +67,8 @@ const Navigation = () => {
       path: '/about',
       children: [
         { name: 'About Us', path: '/about' },
-        { name: 'Client Outcomes', path: '/outcomes' }
+        { name: 'Client Outcomes', path: '/outcomes' },
+        { name: 'Our Products', path: '/products' }
       ]
     },
   ];

@@ -13,6 +13,7 @@ import { UHAnalytics } from '@/lib/analytics';
 import { Switch } from "@/components/ui/switch";
 import TrustSignals from '@/components/TrustSignals';
 import Testimonials from '@/components/Testimonials';
+import ProductShowcase from '@/components/ProductShowcase';
 import TextRotate from '@/components/TextRotate';
 import MagneticButton from '@/components/MagneticButton';
 
@@ -340,6 +341,9 @@ const HomePage = () => {
 
       {/* ──── Testimonials ──── */}
       <Testimonials />
+
+      {/* ──── Products we built ──── */}
+      <ProductShowcase />
 
       {/* ──── Pricing ──── */}
       <section className="relative py-20 md:py-28 overflow-hidden" id="pricing">

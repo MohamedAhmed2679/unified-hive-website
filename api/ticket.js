@@ -1,7 +1,7 @@
 // Support ticket relay: validates the form server-side and emails it to support@unifiedhive.com
 // through FormSubmit (https://formsubmit.co). The first ticket triggers a one-time activation email
 // to support@unifiedhive.com; tickets are delivered once that link is clicked.
-const TO = process.env.SUPPORT_EMAIL || 'support@unifiedhive.com';
+const TO = process.env.SUPPORT_EMAIL || 'info@unifiedhive.com'; // support@ is an alias of this mailbox
 const WINDOW_MS = 10 * 60_000;
 const MAX_PER_WINDOW = 5;
 const hits = new Map();
